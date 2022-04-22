@@ -1,5 +1,7 @@
 package paquete;
 
+import java.util.GregorianCalendar;
+
 public class PersonaFisica extends Persona
 {
 	private String nomUsuario;
@@ -9,10 +11,10 @@ public class PersonaFisica extends Persona
 	 * Necesito un constructor para @param nomUsuario para que no se pueda cambiar.
 	 * En cambio con el setter se puede cambiar más de una vez y no es mi idea.
 	 */
-	public PersonaFisica(String nombre, String apellido, String telefono, String fechaNac, String calle, int numCalle,
+	public PersonaFisica(String nombre, String apellido, String telefono, GregorianCalendar fechaNac, Domicilio domicilio,
 			String nomUsuario)
 	{
-		super(nombre, apellido, telefono, fechaNac, calle, numCalle);
+		super(nombre, apellido, telefono, fechaNac, domicilio);
 		this.nomUsuario = nomUsuario;
 		// TODO Auto-generated constructor stub
 	}

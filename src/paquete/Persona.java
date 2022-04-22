@@ -1,81 +1,63 @@
 package paquete;
 
+import java.util.GregorianCalendar;
+
 public class Persona
 {
 	private String nombre;
 	private String apellido;
 	private String telefono;
-	private String fechaNac; // DD/MM/AAAA
-	private String calle;    //ver si agregar clase direccion!
-	private int numCalle;
-	
-	
-	
-	public Persona(String nombre, String apellido, String telefono, String fechaNac, String calle, int numCalle) 
+	private GregorianCalendar fechaNac; // DD/MM/AAAA
+	private Domicilio domicilio; // ver si agregar clase direccion!
+
+	/**
+	 * 
+	 * Para @param fechaNac uso la clase GregorianCalendar, mientras que para @param
+	 * domicilio uso la clase Domicilio como una relación de agregación.
+	 */
+
+	public Persona(String nombre, String apellido, String telefono, GregorianCalendar fechaNac, Domicilio domicilio)
 	{
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.telefono = telefono;
 		this.fechaNac = fechaNac;
-		this.calle = calle;
-		this.numCalle = numCalle;
+		this.setDomicilio(domicilio);
 	}
 
-
-
-	public String getNombre() {
+	public String getNombre()
+	{
 		return nombre;
 	}
 
-
-
-	public String getApellido() {
+	public String getApellido()
+	{
 		return apellido;
 	}
 
-
-
-	public String getTelefono() {
+	public String getTelefono()
+	{
 		return telefono;
 	}
 
-
-
-	public String getFechaNac() {
+	public GregorianCalendar getFechaNac()
+	{
 		return fechaNac;
 	}
 
-
-
-	public String getCalle() {
-		return calle;
-	}
-
-
-
-	public int getNumCalle() {
-		return numCalle;
-	}
-
-
-
-	public void setTelefono(String telefono) {
+	public void setTelefono(String telefono)
+	{
 		this.telefono = telefono;
 	}
 
-
-
-	public void setCalle(String calle) {
-		this.calle = calle;
+	public Domicilio getDomicilio()
+	{
+		return domicilio;
 	}
 
-
-
-	public void setNumCalle(int numCalle) {
-		this.numCalle = numCalle;
+	public void setDomicilio(Domicilio domicilio)
+	{
+		this.domicilio = domicilio;
 	}
-	
-	
-	
-	
+
 }
