@@ -2,7 +2,9 @@ package paquete;
 
 import java.util.GregorianCalendar;
 
-public class Persona
+import interfaces.Persona;
+
+public class TipoPersona implements Persona
 {
 	private String nombre;
 	private String apellido;
@@ -16,7 +18,7 @@ public class Persona
 	 * domicilio uso la clase Domicilio como una relación de agregación.
 	 */
 
-	public Persona(String nombre, String apellido, String telefono, GregorianCalendar fechaNac, Domicilio domicilio)
+	public TipoPersona(String nombre, String apellido, String telefono, GregorianCalendar fechaNac, Domicilio domicilio)
 	{
 		this.nombre = nombre;
 		this.apellido = apellido;

@@ -2,7 +2,7 @@ package paquete;
 
 import java.util.GregorianCalendar;
 
-public class PersonaFisica extends Persona
+public class PersonaFisica extends TipoPersona
 {
 	private String nomUsuario;
 	private String contrasenia;

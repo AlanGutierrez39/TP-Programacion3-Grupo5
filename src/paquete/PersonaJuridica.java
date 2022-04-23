@@ -2,7 +2,7 @@ package paquete;
 
 import java.util.GregorianCalendar;
 
-public class PersonaJuridica extends Persona 
+public class PersonaJuridica extends TipoPersona 
 {
 	private String nombreRazonSocial;
 	//private tipopersona; ver para poner tipo de persona como interfaz
