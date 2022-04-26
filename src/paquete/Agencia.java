@@ -8,7 +8,7 @@ public class Agencia
 	private String nombre;
 	/* agregar otros tributos, ver cuales! */
 
-	private ArrayList<TipoPersona> personas = new ArrayList<TipoPersona>();
+	private ArrayList<Persona> personas = new ArrayList<Persona>();
 
 	private Agencia()
 	{
@@ -23,17 +23,17 @@ public class Agencia
 		return instancia;
 	}
 
-	public ArrayList<TipoPersona> getPersonas()
+	public ArrayList<Persona> getPersonas()
 	{
 		return personas;
 	}
 
-	public void altaPersona(TipoPersona persona)
+	public void altaPersona(Persona persona)
 	{
 		this.personas.add(persona);
 	}
 
-	public void bajaPersona(TipoPersona persona)
+	public void bajaPersona(Persona persona)
 	{
 		this.personas.remove(persona);
 	}
