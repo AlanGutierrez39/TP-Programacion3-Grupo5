@@ -438,7 +438,7 @@ public class Agencia
 						/*
 						  no me convence como cargar la lista de coincidencia
 						  quisiera buscar a un empleador en la lista y si esta agregar el
-						  empleado pretenso
+						  empleado pretenso y, sino, agregar un nuevo empleador
 						*/
 					}
 				}
