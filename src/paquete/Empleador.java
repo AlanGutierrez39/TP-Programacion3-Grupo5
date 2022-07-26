@@ -96,15 +96,21 @@ public class Empleador extends Persona implements  IPersona, Runnable
 		/* */
 		TicketSimplificado ts1 = new TicketSimplificado("Salud","Presencial", this);
 		Agencia.getInstance().agregarTicketSimplificado(ts1);
+		Util.espera();
 		
 		TicketSimplificado ts2 = new TicketSimplificado("Comercio Internacional","Indistinto", this);
 		Agencia.getInstance().agregarTicketSimplificado(ts2);
+		Util.espera();
 		
 		TicketSimplificado ts3 = new TicketSimplificado("Comercio Local","HomeOffice", this);
 		Agencia.getInstance().agregarTicketSimplificado(ts3);
+		Util.espera();
 		
 		/*
 		/*
+		
+		por qué con el nofityAll() tira error de ejecución??
+		 
 		TicketSimplificado ts1 = new TicketSimplificado("Salud","Presencial", this);
 		Agencia.getInstance().agregarTicketSimplificado(ts1);
 		notifyAll();

@@ -412,7 +412,7 @@ public class Agencia
 		notifyAll();
 		
 		int i = 0;
-		while(this.bolsaDeEmpleo.get(i).getEstado().equals("Autorizado"))
+		while((i < this.getBolsaDeEmpleo().size()) && (this.bolsaDeEmpleo.get(i).getEstado().equals("Autorizado")))
 		{
 			if(this.bolsaDeEmpleo.get(i).getTipoTrabajo().equals(empleado.getTicket().getFbTicket().getTipoPuesto()))
 			{

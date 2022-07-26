@@ -41,29 +41,25 @@ public class PruebaConcurrencia {
 		EmpleadoPretenso empleadoPretenso4 = new EmpleadoPretenso(new Domicilio("Calle Falsa", 123, "Casa"), "1565156", "camila@adf.com", "CamilaLopez", "nosequeponer", "Camila", "Lopez", 46, ticketEmpleadoPretenso5);
 		
 		
-		Thread hilo1 = new Thread(empleador1);
-		Thread hilo2 = new Thread(empleador2);
-		Thread hilo3 = new Thread(empleador3);
+		Thread hiloempleador1 = new Thread(empleador1);
+		Thread hiloempleador2 = new Thread(empleador2);
+		Thread hiloempleador3 = new Thread(empleador3);
 		
-		Thread hilo4 = new Thread(empleadoPretenso1);
+		Thread hiloempleadoPretenso1 = new Thread(empleadoPretenso1);
 		Thread hilo5 = new Thread(empleadoPretenso2);
 		Thread hilo6 = new Thread(empleadoPretenso3);
 		Thread hilo7 = new Thread(empleadoPretenso4);
 		Thread hilo8 = new Thread(empleadoPretenso5);
 		
-		hilo1.start();
-		hilo2.start();
-		hilo3.start();
-		hilo4.start();
+		hiloempleador1.start();
+		hiloempleador2.start();
+		hiloempleador3.start();
+		hiloempleadoPretenso1.start();
 		hilo5.start();
 		hilo6.start();
 		hilo7.start();
 		hilo8.start();
 		
-		/*
-		   error en los hilos de empleado pretenso!
-		   error en los hilos de empleador cuando se notifica!!
-		*/
 		
 		
 		System.out.println("Empleadores:");
