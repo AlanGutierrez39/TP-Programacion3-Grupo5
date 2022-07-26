@@ -110,6 +110,7 @@ public class Empleador extends Persona implements  IPersona, Runnable
 		/*
 		
 		por qué con el nofityAll() tira error de ejecución??
+		es necesario? ya que el notifityAll se encuentra en el método dentro de agencia
 		 
 		TicketSimplificado ts1 = new TicketSimplificado("Salud","Presencial", this);
 		Agencia.getInstance().agregarTicketSimplificado(ts1);
