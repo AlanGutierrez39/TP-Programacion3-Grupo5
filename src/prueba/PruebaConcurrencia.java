@@ -2,11 +2,10 @@ package prueba;
 
 import java.sql.Date;
 
-
 import modelo.FormularioBusqueda;
-import modelo.Ticket;
 import modelo.TicketEmpleadoPretenso;
 import modelo.TicketEmpleador;
+import modelo.TicketSimplificado;
 import paquete.Agencia;
 import paquete.Domicilio;
 import paquete.EmpleadoPretenso;
@@ -41,20 +40,31 @@ public class PruebaConcurrencia {
 		EmpleadoPretenso empleadoPretenso4 = new EmpleadoPretenso(new Domicilio("Calle Falsa", 123, "Casa"), "1565156", "camila@adf.com", "CamilaLopez", "nosequeponer", "Camila", "Lopez", 46, ticketEmpleadoPretenso5);
 		
 		
-		Thread hiloempleador1 = new Thread(empleador1);
-		Thread hiloempleador2 = new Thread(empleador2);
-		Thread hiloempleador3 = new Thread(empleador3);
+		for (EmpleadoPretenso i: Agencia.getInstance().getEmpleadosPretensos())
+		{
+			for (TicketSimplificado j: Agencia.getInstance().getBolsaDeEmpleo())
+			{
+				i.agregarObservable(j);
+			}
+		}
 		
-		Thread hiloempleadoPretenso1 = new Thread(empleadoPretenso1);
+		
+		
+		Thread hilo1 = new Thread(empleador1);
+		Thread hilo2 = new Thread(empleador2);
+		Thread hilo3 = new Thread(empleador3);
+		
+		Thread hilo4 = new Thread(empleadoPretenso1);
 		Thread hilo5 = new Thread(empleadoPretenso2);
 		Thread hilo6 = new Thread(empleadoPretenso3);
 		Thread hilo7 = new Thread(empleadoPretenso4);
 		Thread hilo8 = new Thread(empleadoPretenso5);
 		
-		hiloempleador1.start();
-		hiloempleador2.start();
-		hiloempleador3.start();
-		hiloempleadoPretenso1.start();
+		
+		hilo1.start();
+		hilo2.start();
+		hilo3.start();
+		hilo4.start();
 		hilo5.start();
 		hilo6.start();
 		hilo7.start();

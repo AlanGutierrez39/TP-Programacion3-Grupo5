@@ -6,6 +6,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 import interfaces.IPersona;
+import modelo.ListAsignacionEmpleador;
 import modelo.TicketEmpleadoPretenso;
 import modelo.TicketSimplificado;
 import util.Util;
@@ -135,8 +136,23 @@ public class EmpleadoPretenso extends Persona implements IPersona, Serializable,
 							
 							if (ts.getLocacion().equals(this.ticket.getFbTicket().getLocacion()))
 							{
-								
+								if (ts.getEmpleador().getTicket().getCantEmpleadosObtenidos() < ts.getEmpleador().getTicket().getCantEmpleadosSolicitados())
+								{
+									//hay contratación
+									
+									ts.getEmpleador().getTicket().setCantEmpleadosObtenidos(1);
+									ts.setEstado("Contratado");
+									this.setTicketSimplificado(ts);
+									Agencia.getInstance().emilinarTicketSimplificado(ts);
+									
+									
+									//actualiza lista de coincidencia
+									ListAsignacionEmpleador nodoE = new ListAsignacionEmpleador();
+									nodoE.setEmpleador(ts.getEmpleador());
+									nodoE.getListEmpleadosPretensos().add(this);
+								}
 							}
+							ts.setEstado("Autorizado");
 						}
 					}
 				}
