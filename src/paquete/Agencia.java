@@ -171,11 +171,11 @@ public class Agencia
 	
 
 	/**
-	 * Modifica el saldo de la agencia cuando ï¿½sta cobra una comisiï¿½n.
+	 * Modifica el saldo de la agencia cuando ésta cobra una comisión.
 	 * <br>
 	 * <b>Pre: </b> Existe una lista de coincidencias con usuarios no nulos. Un empleado solo elije una empresa.
 	 * <br>
-	 * <b>Post: </b> Devuelve un ï¿½nico valor.
+	 * <b>Post: </b> Devuelve un único valor.
 	 * @param listaCoincidencias
 	 */
 	public void setSaldoAgencia(ArrayList<ListAsignacionEmpleador> listaCoincidencias) {
@@ -267,9 +267,6 @@ public class Agencia
 		
 		listaCoincidencias.addAll(cla.ListaCoincidencias(listEleccionEmpleador, listEleccionEmpleadoPretensos));
 		
-		
-		actualizacionPuntajeUsuario();
-		setSaldoAgencia(listaCoincidencias);
 	}
 	
 

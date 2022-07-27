@@ -1,5 +1,7 @@
 package paquete;
 
+import java.util.Random;
+
 import interfaces.IPersona;
 import modelo.TicketEmpleador;
 import modelo.TicketSimplificado;
@@ -91,43 +93,50 @@ public class Empleador extends Persona implements  IPersona, Runnable
 	public void run() 
 	{
 		//cada empleador genera 3 puestos de trabajo (tickets simplificados)
-		//notifica cada vez que agrega un nuevo ticket
 		
-		/* */
-		TicketSimplificado ts1 = new TicketSimplificado("Salud","Presencial", this);
-		Agencia.getInstance().agregarTicketSimplificado(ts1);
-		Util.espera();
+		Random r = new Random();
+		int i;
+		String tipoTrabajo = null, locacion = null;
 		
-		TicketSimplificado ts2 = new TicketSimplificado("Comercio Internacional","Indistinto", this);
-		Agencia.getInstance().agregarTicketSimplificado(ts2);
-		Util.espera();
+		for (int j = 0; j < 3; j++)
+		{
+			i = r.nextInt(3);
 		
-		TicketSimplificado ts3 = new TicketSimplificado("Comercio Local","HomeOffice", this);
-		Agencia.getInstance().agregarTicketSimplificado(ts3);
-		Util.espera();
+			switch(i)
+			{
+			case 1:
+				
+				tipoTrabajo = "Salud";
+				break;
+			case 2:
+				tipoTrabajo = "Comercio Local";
+				break;
+			case 3:
+				tipoTrabajo = "Comercio Internacional";
+				break;
+			}
 		
-		/*
+			
+			i = r.nextInt(3);
 		
+			switch(i)
+			{
+			case 1:
+				locacion = "HomeOffice";
+				break;
+			case 2:
+				locacion = "Presencial";
+				break;
+			case 3:
+				locacion = "Indistinto";
+				break;
+			}
 		
-		por qué con el nofityAll() tira error de ejecución??
-		es necesario? ya que el notifityAll se encuentra en el método dentro de agencia
+			TicketSimplificado ts = new TicketSimplificado(tipoTrabajo, locacion, this);
+			Agencia.getInstance().agregarTicketSimplificado(ts);
+			Util.espera();
+		}
 		
-		
-		TicketSimplificado ts1 = new TicketSimplificado("Salud","Presencial", this);
-		Agencia.getInstance().agregarTicketSimplificado(ts1);
-		notifyAll();
-		Util.espera();
-		
-		TicketSimplificado ts2 = new TicketSimplificado("Comercio Internacional","Indistinto", this);
-		Agencia.getInstance().agregarTicketSimplificado(ts2);
-		notifyAll();
-		Util.espera();
-		
-		TicketSimplificado ts3 = new TicketSimplificado("Comercio Local","HomeOffice", this);
-		Agencia.getInstance().agregarTicketSimplificado(ts3);
-		notifyAll();
-		Util.espera();
-		/**/
 	}
 	
 	

@@ -20,7 +20,6 @@ public class TicketSimplificado extends Observable
 	*/
 	
 	
-	
 	public TicketSimplificado(String tipoTrabajo, String locacion, Empleador empleador) 
 	{
 		super();

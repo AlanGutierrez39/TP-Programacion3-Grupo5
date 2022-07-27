@@ -163,6 +163,8 @@ public class PruebaConcurrencia {
 			}
 		}
 		
+		Agencia.getInstance().actualizacionPuntajeUsuario();
+		Agencia.getInstance().setSaldoAgencia(Agencia.getInstance().getListaCoincidencias());
 		
 		System.out.println("Saldo de la agencia $"+Agencia.getInstance().getSaldoAgencia());
 	}
