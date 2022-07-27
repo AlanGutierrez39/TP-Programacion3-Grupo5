@@ -447,7 +447,9 @@ public class Agencia
 					//no hubo éxito en la locación o el empleador ya contrató a todos los empleados pretensos requeridos
 					this.bolsaDeEmpleo.get(i).setEstado("Autorizado");
 				}
-					
+				
+				this.bolsaDeEmpleo.get(i).hasChanged();
+				this.bolsaDeEmpleo.get(i).notifyObservers(this.bolsaDeEmpleo.get(i).getEstado());
 			}
 			i++;
 		}

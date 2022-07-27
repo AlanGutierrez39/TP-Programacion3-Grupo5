@@ -8,6 +8,7 @@ import java.util.Observer;
 import interfaces.IPersona;
 import modelo.TicketEmpleadoPretenso;
 import modelo.TicketSimplificado;
+import util.Util;
 
 public class EmpleadoPretenso extends Persona implements IPersona, Serializable, Runnable, Observer
 {	
@@ -70,13 +71,13 @@ public class EmpleadoPretenso extends Persona implements IPersona, Serializable,
 		this.ticketSimplificado = ticketSimplificado;
 	}
 	
-	public void AgregarObservable(TicketSimplificado ts)
+	public void agregarObservable(TicketSimplificado ts)
 	{
 		ts.addObserver(this);
 		this.observados.add(ts);
 	}
 	
-	public void EliminarObservable(TicketSimplificado ts)
+	public void eliminarObservable(TicketSimplificado ts)
 	{
 		ts.deleteObserver(this);
 		this.observados.remove(ts);
@@ -104,8 +105,61 @@ public class EmpleadoPretenso extends Persona implements IPersona, Serializable,
 	}
 
 	@Override
-	public void update(Observable o, Object arg) {
+	public void update(Observable obs, Object arg) 
+	{
 		// TODO Auto-generated method stub
+
+		TicketSimplificado ts = (TicketSimplificado) obs;
+		
+		String estado = (String) arg;
+		
+		if (observados.contains(obs))
+		{
+			switch (estado)
+			{
+				 
+				/*
+				El empleado pretenso puede analizar el ticket simplificado
+				si se encuentra en estado Autorizado, comprueba si puede quedarse con el ticket
+				 */
+				case "Autorizado" :
+				{
+					if ((this.ticketSimplificado == null) && (this.cantBusquedas < 10))
+					{
+						this.setCantBusquedas(1);
+						
+						if (ts.getTipoTrabajo().equals(this.ticket.getFbTicket().getTipoPuesto())) 
+						{
+							ts.setEstado("Bloqueado");
+							Util.espera(); //simula el envio de mensaje al empleador
+							
+							if (ts.getLocacion().equals(this.ticket.getFbTicket().getLocacion()))
+							{
+								
+							}
+						}
+					}
+				}
+				break;
+				
+				/*
+				El empleado pretenso no realiza nada si el ticket simplificado se
+				encuentra en estado Bloqueado, lo sigue observando
+				 */
+				
+				
+				/*
+				El empleado pretenso ya fue contratado y no requiere seguir observando
+				dicho ticket simplificado
+				 */
+				case "Contratado":
+				{
+					eliminarObservable(ts);
+				}
+				break;
+			}
+			
+		}
 		
 	}
     
