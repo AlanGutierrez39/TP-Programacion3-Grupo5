@@ -1,8 +1,10 @@
 package modelo;
 
+import java.util.Observable;
+
 import paquete.Empleador;
 
-public class TicketSimplificado 
+public class TicketSimplificado extends Observable
 {
 	private String tipoTrabajo; //Salud - Comercio Local - Comercio Internacional
 	private String locacion; // HomeOffice - Presencial - Indistinto

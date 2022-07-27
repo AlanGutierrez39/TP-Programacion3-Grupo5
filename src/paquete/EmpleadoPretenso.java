@@ -1,13 +1,15 @@
 package paquete;
 
 import java.io.Serializable;
-
+import java.util.HashSet;
+import java.util.Observable;
+import java.util.Observer;
 
 import interfaces.IPersona;
 import modelo.TicketEmpleadoPretenso;
 import modelo.TicketSimplificado;
 
-public class EmpleadoPretenso extends Persona implements IPersona, Serializable, Runnable
+public class EmpleadoPretenso extends Persona implements IPersona, Serializable, Runnable, Observer
 {	
 	private String nombre;
 	private String apellido;
@@ -16,6 +18,7 @@ public class EmpleadoPretenso extends Persona implements IPersona, Serializable,
 	private TicketSimplificado ticketSimplificado;
 	private int cantBusquedas = 0;
 	
+	protected HashSet<TicketSimplificado> observados = new HashSet<TicketSimplificado>();
 
 	public EmpleadoPretenso(Domicilio domicilio, String telefono, String mail, String nombUsuario, String contrasenia,
 			String nombre, String apellido, int edad, TicketEmpleadoPretenso ticket) 
@@ -26,7 +29,7 @@ public class EmpleadoPretenso extends Persona implements IPersona, Serializable,
 		this.nombre=nombre;
 		this.edad=edad;
 		this.ticket = ticket;
-		this.ticketSimplificado = null; //se asignarï¿½ de la Bolsa de Trabajo, producto de la simulaciï¿½n
+		this.ticketSimplificado = null; //se asignará de la Bolsa de Trabajo, producto de la simulación
 	}	
 
 	public String getNombre() {
@@ -67,6 +70,17 @@ public class EmpleadoPretenso extends Persona implements IPersona, Serializable,
 		this.ticketSimplificado = ticketSimplificado;
 	}
 	
+	public void AgregarObservable(TicketSimplificado ts)
+	{
+		ts.addObserver(this);
+		this.observados.add(ts);
+	}
+	
+	public void EliminarObservable(TicketSimplificado ts)
+	{
+		ts.deleteObserver(this);
+		this.observados.remove(ts);
+	}
 	
 	@Override
 	public String getNomRazonS() {
@@ -87,6 +101,12 @@ public class EmpleadoPretenso extends Persona implements IPersona, Serializable,
 			Agencia.getInstance().BuscaTicketSimplificado(this);
 			this.setCantBusquedas(1);
 		}
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
 	}
     
     
