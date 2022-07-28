@@ -102,6 +102,7 @@ public class EmpleadoPretenso extends Persona implements IPersona, Serializable,
 		{
 			Agencia.getInstance().BuscaTicketSimplificado(this);
 			this.setCantBusquedas(1);
+			Util.espera();
 		}
 	}
 
@@ -132,7 +133,7 @@ public class EmpleadoPretenso extends Persona implements IPersona, Serializable,
 						if (ts.getTipoTrabajo().equals(this.ticket.getFbTicket().getTipoPuesto())) 
 						{
 							ts.setEstado("Bloqueado");
-							Util.espera(); //simula el envio de mensaje al empleador
+							//Util.espera(); //simula el envio de mensaje al empleador
 							
 							if (ts.getLocacion().equals(this.ticket.getFbTicket().getLocacion()))
 							{

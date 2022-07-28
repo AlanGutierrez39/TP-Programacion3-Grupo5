@@ -11,16 +11,12 @@ public class FormularioBusqueda implements Serializable{
 	private String rangoEtario;
 	private String experienciaPrevia;
 	private String estudiosCursados;
+	private String tipoTrabajo; //Salud - Comercio Local - Comercio Internacional
 	
-	
-
-	public FormularioBusqueda() {
-		super();
-	}
 
 
 	public FormularioBusqueda(String locacion, String remuneracion, String cargaHoraria, String tipoPuesto,
-			String rangoEtario, String experienciaPrevia, String estudiosCursados) {
+			String rangoEtario, String experienciaPrevia, String estudiosCursados, String tipoTrabajo) {
 		super();
 		this.locacion = locacion;
 		this.remuneracion = remuneracion;
@@ -29,6 +25,7 @@ public class FormularioBusqueda implements Serializable{
 		this.rangoEtario = rangoEtario;
 		this.experienciaPrevia = experienciaPrevia;
 		this.estudiosCursados = estudiosCursados;
+		this.tipoTrabajo = tipoTrabajo;
 	}
 
 
@@ -99,6 +96,11 @@ public class FormularioBusqueda implements Serializable{
 
 	public void setEstudiosCursados(String estudiosCursados) {
 		this.estudiosCursados = estudiosCursados;
+	}
+
+
+	public String getTipoTrabajo() {
+		return tipoTrabajo;
 	}
 	
 	

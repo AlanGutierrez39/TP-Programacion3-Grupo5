@@ -117,7 +117,7 @@ public class Empleador extends Persona implements  IPersona, Runnable
 			}
 		
 			
-			i = r.nextInt(3);
+			i = r.nextInt(4);
 		
 			switch(i)
 			{
@@ -134,7 +134,6 @@ public class Empleador extends Persona implements  IPersona, Runnable
 		
 			TicketSimplificado ts = new TicketSimplificado(tipoTrabajo, locacion, this);
 			Agencia.getInstance().agregarTicketSimplificado(ts);
-			Util.espera();
 		}
 		
 	}

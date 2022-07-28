@@ -143,6 +143,10 @@ public class Agencia
 
 	public void agregarTicketSimplificado(TicketSimplificado ticket) {
 		this.bolsaDeEmpleo.add(ticket);
+		for (EmpleadoPretenso i: this.empleadosPretensos)
+		{
+			i.agregarObservable(ticket);
+		}
 	}
 	
 	public void emilinarTicketSimplificado(TicketSimplificado ticket) {
@@ -400,21 +404,24 @@ public class Agencia
 		{
 			try
 			{
+				System.out.println(empleado.getNombre()+" "+empleado.getApellido()+" quiere buscar un ts pero la bolsa está vacía.");
 				wait();
 			} catch (InterruptedException e)
 			{
 				e.printStackTrace();
 			}
 		}
+		System.out.println(empleado.getNombre()+" "+empleado.getApellido()+" logró acceder a la bolsa");
 		notifyAll();
 		
 		int i = 0;
 		while((i < this.getBolsaDeEmpleo().size()) && (this.bolsaDeEmpleo.get(i).getEstado().equals("Autorizado")))
 		{
+			System.out.println(this.bolsaDeEmpleo.size());
 			if(this.bolsaDeEmpleo.get(i).getTipoTrabajo().equals(empleado.getTicket().getFbTicket().getTipoPuesto()))
 			{
 				this.bolsaDeEmpleo.get(i).setEstado("Bloqueado");
-				Util.espera(); //simula el envio de mensaje al empleador
+				//Util.espera(); //simula el envio de mensaje al empleador
 				
 				if(this.bolsaDeEmpleo.get(i).getLocacion().equals(empleado.getTicket().getFbTicket().getLocacion()))
 				{
