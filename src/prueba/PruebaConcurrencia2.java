@@ -68,7 +68,7 @@ public class PruebaConcurrencia2 {
 		Agencia.getInstance().activarRondaEncuentrosLaborales();
 
 		
-	
+		/*
 		Util.espera();
 		Agencia.getInstance().actualizacionPuntajeUsuario();
 		Agencia.getInstance().setSaldoAgencia(Agencia.getInstance().getListaCoincidencias());
@@ -77,6 +77,7 @@ public class PruebaConcurrencia2 {
 		System.out.println("Saldo de la agencia $"+Agencia.getInstance().getSaldoAgencia());
 		
 		System.out.println(Agencia.getInstance().getBolsaDeEmpleo().size());
+		*/
 	}
 }
 

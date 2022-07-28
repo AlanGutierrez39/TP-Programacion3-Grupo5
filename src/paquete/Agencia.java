@@ -421,7 +421,7 @@ public class Agencia
 			if(this.bolsaDeEmpleo.get(i).getTipoTrabajo().equals(empleado.getTicket().getFbTicket().getTipoTrabajo()))
 			{
 				this.bolsaDeEmpleo.get(i).setEstado("Bloqueado");
-				//Util.espera(); //simula el envio de mensaje al empleador
+				Util.espera(); //simula el envio de mensaje al empleador
 				
 				if(this.bolsaDeEmpleo.get(i).getLocacion().equals(empleado.getTicket().getFbTicket().getLocacion()))
 				{
