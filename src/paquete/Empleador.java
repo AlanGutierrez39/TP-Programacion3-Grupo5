@@ -96,26 +96,10 @@ public class Empleador extends Persona implements  IPersona, Runnable
 		
 		Random r = new Random();
 		int i;
-		String tipoTrabajo = null, locacion = null;
+		String locacion = null;
 		
 		for (int j = 0; j < 3; j++)
 		{
-			i = r.nextInt(3);
-		
-			switch(i)
-			{
-			case 1:
-				
-				tipoTrabajo = "Salud";
-				break;
-			case 2:
-				tipoTrabajo = "Comercio Local";
-				break;
-			case 3:
-				tipoTrabajo = "Comercio Internacional";
-				break;
-			}
-		
 			
 			i = r.nextInt(4);
 		
@@ -132,7 +116,7 @@ public class Empleador extends Persona implements  IPersona, Runnable
 				break;
 			}
 		
-			TicketSimplificado ts = new TicketSimplificado(tipoTrabajo, locacion, this);
+			TicketSimplificado ts = new TicketSimplificado(this.getRubro(), locacion, this);
 			Agencia.getInstance().agregarTicketSimplificado(ts);
 		}
 		
