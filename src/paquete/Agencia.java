@@ -428,7 +428,11 @@ public class Agencia
 					if (this.bolsaDeEmpleo.get(i).getEmpleador().getTicket().getCantEmpleadosObtenidos() < this.bolsaDeEmpleo.get(i).getEmpleador().getTicket().getCantEmpleadosSolicitados())
 					{   
 						//hay contratación
-						
+						/*
+						 no se llega a ejecutar esta parte del código
+						 tampoco el update de empleado pretenso!
+						 */
+						System.out.println(this.bolsaDeEmpleo.get(i).getEmpleador().getNombre());
 						this.bolsaDeEmpleo.get(i).getEmpleador().getTicket().setCantEmpleadosObtenidos(1);
 						this.bolsaDeEmpleo.get(i).setEstado("Contratado");
 						empleado.setTicketSimplificado(this.bolsaDeEmpleo.get(i));
