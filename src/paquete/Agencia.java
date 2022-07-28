@@ -417,8 +417,8 @@ public class Agencia
 		int i = 0;
 		while((i < this.getBolsaDeEmpleo().size()) && (this.bolsaDeEmpleo.get(i).getEstado().equals("Autorizado")))
 		{
-			System.out.println(this.bolsaDeEmpleo.size());
-			if(this.bolsaDeEmpleo.get(i).getTipoTrabajo().equals(empleado.getTicket().getFbTicket().getTipoPuesto()))
+			//System.out.println(this.bolsaDeEmpleo.size());
+			if(this.bolsaDeEmpleo.get(i).getTipoTrabajo().equals(empleado.getTicket().getFbTicket().getTipoTrabajo()))
 			{
 				this.bolsaDeEmpleo.get(i).setEstado("Bloqueado");
 				//Util.espera(); //simula el envio de mensaje al empleador

@@ -130,7 +130,7 @@ public class EmpleadoPretenso extends Persona implements IPersona, Serializable,
 					{
 						this.setCantBusquedas(1);
 						
-						if (ts.getTipoTrabajo().equals(this.ticket.getFbTicket().getTipoPuesto())) 
+						if (ts.getTipoTrabajo().equals(this.ticket.getFbTicket().getTipoTrabajo())) 
 						{
 							ts.setEstado("Bloqueado");
 							//Util.espera(); //simula el envio de mensaje al empleador
