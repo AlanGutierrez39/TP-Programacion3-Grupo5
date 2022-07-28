@@ -65,6 +65,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 	private final ButtonGroup buttonGroup_4 = new ButtonGroup();
 	private final ButtonGroup buttonGroup_5 = new ButtonGroup();
 	private final ButtonGroup buttonGroup_6 = new ButtonGroup();
+	private final ButtonGroup buttonGroup_7 = new ButtonGroup();
 	private JTable table;
 	private JList<Empleador> list;
 	private JList<Empleador> list_1;
@@ -377,6 +378,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		this.registroButton = new JButton("Registrarse");
 		registroButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
 				tabbedPane.setEnabledAt(0, false);
 				tabbedPane.setEnabledAt(1, false);
 				tabbedPane.setSelectedIndex(2);
@@ -416,6 +418,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 				{"Rango Etario:", null},
 				{"Experiencia Previa:", null},
 				{"Estudios Cursados:", null},
+				{"Tipo de Trabajo:", null},
 				{"Fecha:", null},
 				{"Estado del Ticket:", null},
 				{"Resultado del Ticket:", null},
@@ -438,7 +441,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		table.setEnabled(false);
 		panel_3.add(table);
 		panel_3.add(panel_4);
-		panel_4.setLayout(new GridLayout(8, 4, 0, 0));
+		panel_4.setLayout(new GridLayout(9, 4, 0, 0));
 		
 		JLabel lblNewLabel = new JLabel("Locaci贸n:");
 		panel_4.add(lblNewLabel);
@@ -544,6 +547,21 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		buttonGroup_6.add(rdbtnNewRadioButton_2_6);
 		panel_4.add(rdbtnNewRadioButton_2_6);
 		
+		JLabel lblNewLabel_10 = new JLabel("Tipo de Trabajo:");
+		panel_4.add(lblNewLabel_10);
+		
+		JRadioButton rdbtnNewRadioButton_9 = new JRadioButton("Salud");
+		buttonGroup_7.add(rdbtnNewRadioButton_9);
+		panel_4.add(rdbtnNewRadioButton_9);
+		
+		JRadioButton rdbtnNewRadioButton_10 = new JRadioButton("Comercio Local");
+		buttonGroup_7.add(rdbtnNewRadioButton_10);
+		panel_4.add(rdbtnNewRadioButton_10);
+		
+		JRadioButton rdbtnNewRadioButton_11 = new JRadioButton("Comercio Internacional");
+		buttonGroup_7.add(rdbtnNewRadioButton_11);
+		panel_4.add(rdbtnNewRadioButton_11);
+		
 		JLabel lblNewLabel_7 = new JLabel("");
 		panel_4.add(lblNewLabel_7);
 		
@@ -554,6 +572,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		btnNewButton_2.setActionCommand("Crear ticket");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
 			}
 		});
 		panel_4.add(btnNewButton_2);
@@ -570,6 +589,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		btnNewButton.setActionCommand("Ver ticket");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
 				table.setVisible(true);
 				panel_4.setVisible(false);
 			}
@@ -589,6 +609,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 				buttonGroup_4.clearSelection();
 				buttonGroup_5.clearSelection();
 				buttonGroup_6.clearSelection();
+				buttonGroup_7.clearSelection();
 			}
 		});
 		panel.add(btnNewButton_1);
@@ -599,12 +620,28 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		tabbedPane.addTab("Lista de Empleadores", null, panel_ListaEmpleadores, "Lista de Empleadores");
 		tabbedPane.setEnabledAt(3, false);
 		
+		JButton btnNewButton_3 = new JButton("Mostrar lista");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
+		panel_ListaEmpleadores.add(btnNewButton_3);
+		
 		list = new JList<Empleador>();
 		panel_ListaEmpleadores.add(list);
 		
 		JPanel panel_RondaEleccion = new JPanel();
-		panel_RondaEleccion.setToolTipText("Ronda de Elecci贸n");
-		tabbedPane.addTab("Ronda de Elecci贸n", null, panel_RondaEleccion, "Ronda de Elecci贸n");
+		panel_RondaEleccion.setToolTipText("Ronda de Elecci髇");
+		tabbedPane.addTab("Ronda de Elecci髇", null, panel_RondaEleccion, "Ronda de Elecci髇");
+		
+		JButton btnNewButton_4 = new JButton("Mostrar elecci髇");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
+		panel_RondaEleccion.add(btnNewButton_4);
 		
 		list_1 = new JList<Empleador>();
 		panel_RondaEleccion.add(list_1);
@@ -742,6 +779,11 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 	public ButtonGroup getButtonGroup_6()
 	{
 		return buttonGroup_6;
+	}
+
+	public ButtonGroup getButtonGroup_7()
+	{
+		return buttonGroup_7;
 	}
 
 	@Override

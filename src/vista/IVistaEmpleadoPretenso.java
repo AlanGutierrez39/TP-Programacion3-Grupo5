@@ -36,6 +36,7 @@ public interface IVistaEmpleadoPretenso
 	public ButtonGroup getButtonGroup_4();
 	public ButtonGroup getButtonGroup_5();
 	public ButtonGroup getButtonGroup_6();
+	public ButtonGroup getButtonGroup_7();
 	public JTable getTable();
 	public JList<Empleador> getList();
 	public void setList(JList<Empleador> list);

@@ -1,12 +1,7 @@
 package prueba;
 
 import java.util.Date;
-
-import controlador.ControladorAgencia;
-import controlador.ControladorEmpleadoPretenso;
-import controlador.ControladorEmpleador;
 import modelo.FormularioBusqueda;
-import modelo.Ticket;
 import modelo.TicketEmpleadoPretenso;
 import modelo.TicketEmpleador;
 import paquete.Agencia;
@@ -68,10 +63,10 @@ public class CargaDatos {
 			if (Agencia.getInstance().getListAsignacionEmpleador().get(i).getEmpleador().isPersonaJuridica())
 				System.out.println("Lista de asignacion de " + Agencia.getInstance().getListAsignacionEmpleador().get(i).getEmpleador().getNomRazonS() + ":");
 			else
-				System.out.println("Lista de asignacion de " + Agencia.getInstance().getListAsignacionEmpleador().get(i).getEmpleador().getNombre()+Agencia.getInstance().getListAsignacionEmpleador().get(i).getEmpleador().getApellido() + ":");
+				System.out.println("Lista de asignacion de " + Agencia.getInstance().getListAsignacionEmpleador().get(i).getEmpleador().getNombre()+" "+Agencia.getInstance().getListAsignacionEmpleador().get(i).getEmpleador().getApellido() + ":");
 			
 			for(int j=0; j < Agencia.getInstance().getListAsignacionEmpleador().get(i).getListEmpleadosPretensos().size(); j++) {
-				System.out.println(Agencia.getInstance().getListAsignacionEmpleador().get(i).getListEmpleadosPretensos().get(j).getNombre()+Agencia.getInstance().getListAsignacionEmpleador().get(i).getListEmpleadosPretensos().get(j).getApellido());
+				System.out.println(Agencia.getInstance().getListAsignacionEmpleador().get(i).getListEmpleadosPretensos().get(j).getNombre()+" "+Agencia.getInstance().getListAsignacionEmpleador().get(i).getListEmpleadosPretensos().get(j).getApellido());
 			}
 		}
 		
@@ -79,13 +74,13 @@ public class CargaDatos {
 		System.out.println("____________________________________________________");
 		System.out.println("Empleadores asignados:");
 		for(int i=0; i<Agencia.getInstance().getListAsignacionEmpleadoPretensos().size(); i++) {
-			System.out.println("Lista de asignacion de " + Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getEmpleadoPretenso().getNombre()+Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getEmpleadoPretenso().getApellido() + ":");
+			System.out.println("Lista de asignacion de " + Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getEmpleadoPretenso().getNombre()+" "+Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getEmpleadoPretenso().getApellido() + ":");
 			
 			for(int j=0; j < Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getListEmpleadores().size(); j++) {
 				if (Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getListEmpleadores().get(j).isPersonaJuridica())
 					System.out.println(Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getListEmpleadores().get(j).getNomRazonS());
 				else
-					System.out.println(Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getListEmpleadores().get(j).getNombre()+Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getListEmpleadores().get(j).getApellido());
+					System.out.println(Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getListEmpleadores().get(j).getNombre()+" "+Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getListEmpleadores().get(j).getApellido());
 				
 			}
 		}
@@ -95,13 +90,13 @@ public class CargaDatos {
 		System.out.println("____________________________________________________");
 		System.out.println("Empleadores elegidos:");
 		for(int i=0; i<Agencia.getInstance().getListEleccionEmpleadoPretensos().size(); i++) {
-			System.out.println(Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getEmpleadoPretenso().getNombre()+Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getEmpleadoPretenso().getApellido() + " eligió a :");
+			System.out.println(Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getEmpleadoPretenso().getNombre()+" "+Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getEmpleadoPretenso().getApellido() + " eligió a :");
 			
 			for(int j=0; j < Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getListEmpleadores().size(); j++) {
 				if (Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getListEmpleadores().get(j).isPersonaJuridica())
 					System.out.println(Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getListEmpleadores().get(j).getNomRazonS());
 				else
-					System.out.println(Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getListEmpleadores().get(j).getNombre()+Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getListEmpleadores().get(j).getApellido());
+					System.out.println(Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getListEmpleadores().get(j).getNombre()+" "+Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getListEmpleadores().get(j).getApellido());
 				
 			}
 		}
@@ -113,25 +108,25 @@ public class CargaDatos {
 			if (Agencia.getInstance().getListEleccionEmpleador().get(i).getEmpleador().isPersonaJuridica())
 				System.out.println("Lista de empleados pretensos elegidos por " + Agencia.getInstance().getListEleccionEmpleador().get(i).getEmpleador().getNomRazonS() + ":");
 			else
-				System.out.println("Lista de empleados pretensos elegidos por " + Agencia.getInstance().getListEleccionEmpleador().get(i).getEmpleador().getNombre()+Agencia.getInstance().getListEleccionEmpleador().get(i).getEmpleador().getApellido() + ":");
+				System.out.println("Lista de empleados pretensos elegidos por " + Agencia.getInstance().getListEleccionEmpleador().get(i).getEmpleador().getNombre()+" "+Agencia.getInstance().getListEleccionEmpleador().get(i).getEmpleador().getApellido() + ":");
 			
 			for(int j=0; j < Agencia.getInstance().getListEleccionEmpleador().get(i).getListEmpleadosPretensos().size(); j++) {
-				System.out.println(Agencia.getInstance().getListEleccionEmpleador().get(i).getListEmpleadosPretensos().get(j).getNombre()+Agencia.getInstance().getListEleccionEmpleador().get(i).getListEmpleadosPretensos().get(j).getApellido());
+				System.out.println(Agencia.getInstance().getListEleccionEmpleador().get(i).getListEmpleadosPretensos().get(j).getNombre()+" "+Agencia.getInstance().getListEleccionEmpleador().get(i).getListEmpleadosPretensos().get(j).getApellido());
 			}
 		}
 		
 		
 		
 		System.out.println("____________________________________________________");
-		System.out.println("Lista de asignaciones:");
+		System.out.println("Lista de coincidencias:");
 		for(int i=0; i<Agencia.getInstance().getListaCoincidencias().size(); i++) {
 			if (Agencia.getInstance().getListaCoincidencias().get(i).getEmpleador().isPersonaJuridica())
 				System.out.println("Lista de asignación de " + Agencia.getInstance().getListaCoincidencias().get(i).getEmpleador().getNomRazonS() + ":");
 			else
-				System.out.println("Lista de asignación de " +Agencia.getInstance().getListaCoincidencias().get(i).getEmpleador().getNombre()+Agencia.getInstance().getListaCoincidencias().get(i).getEmpleador().getApellido() + ":");
+				System.out.println("Lista de asignación de " +Agencia.getInstance().getListaCoincidencias().get(i).getEmpleador().getNombre()+" "+Agencia.getInstance().getListaCoincidencias().get(i).getEmpleador().getApellido() + ":");
 			
 			for(int j=0; j < Agencia.getInstance().getListaCoincidencias().get(i).getListEmpleadosPretensos().size(); j++) {
-				System.out.println(Agencia.getInstance().getListaCoincidencias().get(i).getListEmpleadosPretensos().get(j).getNombre()+Agencia.getInstance().getListaCoincidencias().get(i).getListEmpleadosPretensos().get(j).getApellido());
+				System.out.println(Agencia.getInstance().getListaCoincidencias().get(i).getListEmpleadosPretensos().get(j).getNombre()+" "+Agencia.getInstance().getListaCoincidencias().get(i).getListEmpleadosPretensos().get(j).getApellido());
 			}
 		}
 		
