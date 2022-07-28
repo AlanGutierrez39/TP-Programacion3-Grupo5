@@ -52,7 +52,7 @@ public class TicketSimplificado extends Observable
 	}
 	
 	/**
-	 * Método que 
+	 * Invoca a setChanged para nofiticar cambios.
 	 */
 	public void cambio()
 	{

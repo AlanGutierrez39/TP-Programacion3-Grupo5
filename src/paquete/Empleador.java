@@ -89,11 +89,13 @@ public class Empleador extends Persona implements  IPersona, Runnable
 		return 0;
 	}
 
+	
+	/**
+	 * Cada empleador generaá 3 puestos de trabajo.
+	 */
 	@Override
 	public void run() 
-	{
-		//cada empleador genera 3 puestos de trabajo (tickets simplificados)
-		
+	{	
 		Random r = new Random();
 		int i;
 		String locacion = null;

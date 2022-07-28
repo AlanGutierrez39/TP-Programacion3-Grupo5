@@ -95,6 +95,10 @@ public class EmpleadoPretenso extends Persona implements IPersona, Serializable,
         return 0.0;
     }
 
+    /**
+	 * El empleado pretenso buscará en la bolsa de empleo hasta 10 veces un ticket o
+	 * hasta encontrar un ticket simplificado de su satisfacción.
+	 */
 	@Override
 	public void run() 
 	{
@@ -106,6 +110,7 @@ public class EmpleadoPretenso extends Persona implements IPersona, Serializable,
 		}
 	}
 
+	
 	@Override
 	public void update(Observable obs, Object arg) 
 	{	
@@ -131,7 +136,6 @@ public class EmpleadoPretenso extends Persona implements IPersona, Serializable,
 						if (ts.getTipoTrabajo().equals(this.ticket.getFbTicket().getTipoTrabajo())) 
 						{
 							ts.setEstado("Bloqueado");
-							//Util.espera(); //simula el envio de mensaje al empleador
 							
 							if (ts.getLocacion().equals(this.ticket.getFbTicket().getLocacion()))
 							{
@@ -170,12 +174,14 @@ public class EmpleadoPretenso extends Persona implements IPersona, Serializable,
 				 */
 				case "Contratado":
 				{
-					eliminarObservable(ts);
+					this.eliminarObservable(ts);
 				}
 				break;
 			}
 			
 		}
+		else
+			throw new IllegalArgumentException();
 		
 	}
     

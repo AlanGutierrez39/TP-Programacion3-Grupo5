@@ -11,9 +11,20 @@ import modelo.ListAsignacionEmpleadPretenso;
 import modelo.ListAsignacionEmpleador;
 import tablas.PuntajeTicket;
 
-public class ControlListasAgencia implements Serializable{
+/**
+ * @author paula
+ *
+ *Clase que se encarga de generar las listas que contiene la Agencia.
+ */
+public class ControlListasAgencia implements Serializable
+{
 
-	
+	/**
+	 * Método que 
+	 * @param empleadosPretensosActivos
+	 * @param empleadoresActivos
+	 * @return
+	 */
 	public ArrayList<ListAsignacionEmpleador> generarListAsignacionEmpleador(ArrayList<EmpleadoPretenso> empleadosPretensosActivos,ArrayList<Empleador> empleadoresActivos) {
 		ArrayList<ListAsignacionEmpleador> listAsignacionEmpleador = new ArrayList<ListAsignacionEmpleador>();
 		for (int i=0; i<empleadoresActivos.size(); i++)

@@ -14,9 +14,11 @@ import util.Util;
 /**
  * @author paula
  *<br> 
- *Clase que representa una agencia dentro de un sistema de Gestiï¿½n de Bï¿½squedas Laborales.
+ *Clase que representa una agencia dentro de un sistema de Gestión de Búsquedas Laborales.
  *<br>
- *Contiene el registro de todos los usuarios y permite logear un nuevo usuario. El sistema permite el ingreso de datos, que luego serï¿½n procesados para generar tickets. Dichos tickets permitirï¿½ analizar la contrataciï¿½n de empleados.
+ *Contiene el registro de todos los usuarios y permite logear un nuevo usuario. 
+ *El sistema permite el ingreso de datos, que luego serán procesados para generar tickets. Dichos tickets 
+ *permitirán analizar la contratación de empleados.
  */
 public class Agencia
 {
@@ -204,14 +206,14 @@ public class Agencia
 	
 	
 	/**
-	 * Genera las listas se asignaciï¿½n de los empleadores y los empleados pretensos.
+	 * Genera las listas de asignación de los empleadores y los empleados pretensos.
 	 * <br>
 	 * <b>Pre: <b/> Las listas no pueden ser nulas y tienen que tener al menos un dato.
 	 * <br>
 	 * <b>Pos: <b/> Devuelve listas de asignaciï¿½n y las de coincidencia. <br> Finaliza estado ticket <br> Actualiza puntaje usuario <br>
 	 *   
 	 */
-	public void activarRondaEncuentrosLaborales () {///metodo que genere las listas de asignacion
+	public void activarRondaEncuentrosLaborales () {
 		
 		ControlListasAgencia cla= new ControlListasAgencia();
 		ControlEstadosTicket cet = new ControlEstadosTicket();
@@ -226,7 +228,13 @@ public class Agencia
 	}
 	
 	
-	
+	/**
+	 * Método que activa la ronda de elección
+	 * <br>
+	 * <b>Pre: </b> Las listas de asignación no pueden ser nulas.
+	 * <br>
+	 * <b>Pos: </b> La lista de coincidencias tendrá los empleados pretensos contratados por cada emppleador.
+	 */
 	public void activarRondaEleccion(){
 		int i ;
 		ControlListasAgencia cla= new ControlListasAgencia();
@@ -336,17 +344,17 @@ public class Agencia
 	 * <br>
 	 * <b>Pre: </b> La lista de empleadores y empleados no pueden ser nula.
 	 * <br>
-	 * <b>Pos: </b> Que el usuario ingresa al sistema con su nombre de usuario y la contraseï¿½a, si ï¿½ste se encuentra registrado.
+	 * <b>Pos: </b> Que el usuario ingresa al sistema con su nombre de usuario y la contraseña, si éste se encuentra registrado.
 	 * @param nombUsuarioIngresado : Nombre de usuario a logearse
-	 * @param contrasenaIngresada : Contraseï¿½a del usuario a logearse.
+	 * @param contrasenaIngresada : Contraseña del usuario a logearse.
 	 * @return : retorna si el usuario se pudo logear.
 	 * @throws NombreDeUsuarioIncorrectoException : Lanza una excepcion si el usuario es incorrecto.
-	 * @throws ContrasenaIncorrectaException : Lanza una excepcion si la contraseï¿½a es incorrecta.
+	 * @throws ContrasenaIncorrectaException : Lanza una excepcion si la contraseïña es incorrecta.
 	 */
 	public boolean login(String nombUsuarioIngresado, String contrasenaIngresada) throws NombreDeUsuarioIncorrectoException, ContrasenaIncorrectaException
 	{
 		//de ser usuario inexistente tira una excpecion
-		// de ser contraseï¿½a erronea tira otra excpecion
+		// de ser contraseña erronea tira otra excpecion
 		
 		int i = 0;
 		boolean loginCorrecto = false;
@@ -379,14 +387,28 @@ public class Agencia
 		
 	}
 	
-
+    /**
+     *  Método que muestra los empleados pretensos registrados en la Agencia.
+	 * <br>
+	 * <b>Pre: </b> La lista de empleados pretensos no puede ser nula.
+	 * <br>
+	 * <b>Pos: </b> Se mostrará por consola la lista de empleados pretensos.
+     * @param empleadosPretensos
+     */
 	public void mostrarEmpleadosPretensos(ArrayList<EmpleadoPretenso> empleadosPretensos) {
 		for(int i = 0; i < empleadosPretensos.size(); i++) {
 			System.out.println(empleadosPretensos.get(i).getNombre()+empleadosPretensos.get(i).getApellido());
 		}
 	}
 
-
+	/**
+	 * Método que muestra los empleadores registrados en la Agencia.
+	 * <br>
+	 * <b>Pre: </b> La lista de empleadores no puede ser nula.
+	 * <br>
+	 * <b>Pos: </b> Se mostrará por consola la lista de empleadores
+	 * @param empleadores
+	 */
 	public void mostrarEmpleadores(ArrayList<Empleador> empleadores) {
 		for (int i=0; i < empleadores.size(); i++) {
 			if (empleadores.get(i).isPersonaJuridica())
@@ -398,6 +420,15 @@ public class Agencia
 	}
 	
 	
+	/**
+	 * Un empleado pretenso busca en la Bolsa de Empleo un ticket simplificado
+	 * de su satisfacción.
+	 * <br>
+	 * <b>Pre: </b> El empleado no puede ser null
+	 * <br>
+	 * <b>Pos: </b> el empleado pretenso será contratado si resulta una búsqueda exitosa.
+	 * @param empleado
+	 */
 	public synchronized void BuscaTicketSimplificado(EmpleadoPretenso empleado)
 	{
 		while(this.bolsaDeEmpleo.isEmpty())
@@ -421,7 +452,7 @@ public class Agencia
 			if(this.bolsaDeEmpleo.get(i).getTipoTrabajo().equals(empleado.getTicket().getFbTicket().getTipoTrabajo()))
 			{
 				this.bolsaDeEmpleo.get(i).setEstado("Bloqueado");
-				//Util.espera(); //simula el envio de mensaje al empleador
+				Util.espera(); //simula el envio de mensaje al empleador
 				
 				System.out.println(this.bolsaDeEmpleo.size());
 				if(this.bolsaDeEmpleo.get(i).getLocacion().equals(empleado.getTicket().getFbTicket().getLocacion()))
@@ -429,12 +460,7 @@ public class Agencia
 					if (this.bolsaDeEmpleo.get(i).getEmpleador().getTicket().getCantEmpleadosObtenidos() < this.bolsaDeEmpleo.get(i).getEmpleador().getTicket().getCantEmpleadosSolicitados())
 					{   
 						//hay contratación
-						/*
-						 no se llega a ejecutar esta parte del código
-						 tampoco el update de empleado pretenso!
-						 */
-						//System.out.println(this.bolsaDeEmpleo.get(i));
-						//System.out.println(this.bolsaDeEmpleo.get(i).getEmpleador().getNombre());
+						
 						System.out.println(empleado.getNombre()+" "+empleado.getApellido()+" fue contratado por "+ this.bolsaDeEmpleo.get(i).getEmpleador().getNombUsuario()+"----------");
 						this.bolsaDeEmpleo.get(i).getEmpleador().getTicket().setCantEmpleadosObtenidos(1);
 						this.bolsaDeEmpleo.get(i).setEstado("Contratado");
@@ -459,7 +485,6 @@ public class Agencia
 					this.bolsaDeEmpleo.get(i).setEstado("Autorizado");
 				}
 				
-				System.out.println(this.bolsaDeEmpleo.get(i).getEstado());
 				this.bolsaDeEmpleo.get(i).cambio();
 				this.bolsaDeEmpleo.get(i).notifyObservers(this.bolsaDeEmpleo.get(i).getEstado());
 			}
