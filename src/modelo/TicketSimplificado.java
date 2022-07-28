@@ -50,11 +50,12 @@ public class TicketSimplificado extends Observable
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-
 	
-
-	
-	
-	
-	
+	/**
+	 * Método que 
+	 */
+	public void cambio()
+	{
+		this.setChanged();
+	}
 }

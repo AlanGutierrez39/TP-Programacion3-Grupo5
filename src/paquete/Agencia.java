@@ -459,7 +459,8 @@ public class Agencia
 					this.bolsaDeEmpleo.get(i).setEstado("Autorizado");
 				}
 				
-				this.bolsaDeEmpleo.get(i).hasChanged();
+				System.out.println(this.bolsaDeEmpleo.get(i).getEstado());
+				this.bolsaDeEmpleo.get(i).cambio();
 				this.bolsaDeEmpleo.get(i).notifyObservers(this.bolsaDeEmpleo.get(i).getEstado());
 			}
 			i++;

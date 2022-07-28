@@ -108,9 +108,7 @@ public class EmpleadoPretenso extends Persona implements IPersona, Serializable,
 
 	@Override
 	public void update(Observable obs, Object arg) 
-	{
-		// TODO Auto-generated method stub
-
+	{	
 		TicketSimplificado ts = (TicketSimplificado) obs;
 		
 		String estado = (String) arg;
