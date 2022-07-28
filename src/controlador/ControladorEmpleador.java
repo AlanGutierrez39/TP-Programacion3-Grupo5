@@ -56,7 +56,7 @@ public class ControladorEmpleador implements ActionListener
 		if (e.getActionCommand().equalsIgnoreCase("Registrarse"))
 		{
 			Empleador empleador;
-			if (this.vista.getGroup().getSelection().getActionCommand().equalsIgnoreCase("FÃ­sica"))
+			if (this.vista.getGroup().getSelection().getActionCommand().equalsIgnoreCase("F\u00edsica"))
 				empleador = new Empleador(new Domicilio(this.vista.getTextField_5().getText(), 0, null) , this.vista.getTextField_6().getText(), this.vista.getTextField_7().getText(), this.vista.getTextField_1().getText(), this.vista.getPasswordField_1().getText(), this.vista.getTextField_2().getText(), this.vista.getTextField_3().getText(), Integer.parseInt(this.vista.getTextField_4().getText()), this.vista.getButtonGroup_7().getSelection().getActionCommand(), null, null);
 			else
 				empleador = new Empleador(new Domicilio(this.vista.getTextField_5().getText(), 0, null) , this.vista.getTextField_6().getText(), this.vista.getTextField_7().getText(), this.vista.getTextField_1().getText(), this.vista.getPasswordField_1().getText(), this.vista.getTextField_2().getText(), this.vista.getButtonGroup_7().getSelection().getActionCommand(), null, null);
@@ -78,7 +78,7 @@ public class ControladorEmpleador implements ActionListener
 				JOptionPane.showMessageDialog(null, "Nombre de usuario incorrecto");
 			} catch (ContrasenaIncorrectaException e1)
 			{
-				JOptionPane.showMessageDialog(null, "ContraseÃ±a incorrecta");
+				JOptionPane.showMessageDialog(null, "Contrase\u00f1a incorrecta");
 			}
 		}
 		else if (e.getActionCommand().equalsIgnoreCase("Crear ticket")) {
@@ -90,7 +90,7 @@ public class ControladorEmpleador implements ActionListener
 			int i = 0;
 			while (i < Agencia.getInstance().getEmpleadores().size() && !Agencia.getInstance().getEmpleadores().get(i).getNombUsuario().equals(usuario))
 				i++;
-			//Agencia.getInstance().getEmpleadores().get(i).setTicket(new TicketEmpleador(new FormularioBusqueda(this.vista.getButtonGroup().getSelection().getActionCommand(), this.vista.getButtonGroup_1().getSelection().getActionCommand(), this.vista.getButtonGroup_2().getSelection().getActionCommand(), this.vista.getButtonGroup_3().getSelection().getActionCommand(), this.vista.getButtonGroup_4().getSelection().getActionCommand(), this.vista.getButtonGroup_5().getSelection().getActionCommand(), this.vista.getButtonGroup_6().getSelection().getActionCommand()), new EstadoTicket("Activo"), new Date(2022, 05, 23)));
+			//Agencia.getInstance().getEmpleadores().get(i).setTicket(new TicketEmpleador(new FormularioBusqueda(this.vista.getButtonGroup().getSelection().getActionCommand(), this.vista.getButtonGroup_1().getSelection().getActionCommand(), this.vista.getButtonGroup_2().getSelection().getActionCommand(), this.vista.getButtonGroup_3().getSelection().getActionCommand(), this.vista.getButtonGroup_4().getSelection().getActionCommand(), this.vista.getButtonGroup_5().getSelection().getActionCommand(), this.vista.getButtonGroup_6().getSelection().getActionCommand()), new EstadoTicket("Activo"), new Date(2022, 06, 28)));
 			//falta setTicket
 		}else if (e.getActionCommand().equalsIgnoreCase("Ver ticket")) {
 			String usuario;
@@ -101,19 +101,22 @@ public class ControladorEmpleador implements ActionListener
 			int i = 0;
 			while (i < Agencia.getInstance().getEmpleadores().size() && !Agencia.getInstance().getEmpleadores().get(i).getNombUsuario().equals(usuario))
 				i++;
-			Ticket ticket = Agencia.getInstance().getEmpleadores().get(i).getTicket();
-			this.vista.getTable().setValueAt(ticket.getFbTicket().getLocacion(), 0, 1);
-			this.vista.getTable().setValueAt(ticket.getFbTicket().getRemuneracion(), 1, 1);
-			this.vista.getTable().setValueAt(ticket.getFbTicket().getCargaHoraria(), 2, 1);
-			this.vista.getTable().setValueAt(ticket.getFbTicket().getTipoPuesto(), 3, 1);
-			this.vista.getTable().setValueAt(ticket.getFbTicket().getRangoEtario(), 4, 1);
-			this.vista.getTable().setValueAt(ticket.getFbTicket().getExperienciaPrevia(), 5, 1);
-			this.vista.getTable().setValueAt(ticket.getFbTicket().getEstudiosCursados(), 6, 1);
-			this.vista.getTable().setValueAt(ticket.getFechaTicket(), 7, 1);
-			this.vista.getTable().setValueAt(ticket.getEstado().ticketDisponible(), 8, 1);
-			//this.vista.getTable().setValueAt(Agencia.getInstance().getEmpleadores().get(i)., 9, 1);
-			//this.vista.getTable().setValueAt(ticket.getEstadoTicket(), 10, 1);
-			//this.vista.getTable().setValueAt(Agencia.getInstance().getEmpleadores().get(i)., 11, 1);//ACÃ� MOSTRARÃ�A EL RESULTADO.
+			if (i < Agencia.getInstance().getEmpleadores().size())
+			{
+				Ticket ticket = Agencia.getInstance().getEmpleadores().get(i).getTicket();
+				this.vista.getTable().setValueAt(ticket.getFbTicket().getLocacion(), 0, 1);
+				this.vista.getTable().setValueAt(ticket.getFbTicket().getRemuneracion(), 1, 1);
+				this.vista.getTable().setValueAt(ticket.getFbTicket().getCargaHoraria(), 2, 1);
+				this.vista.getTable().setValueAt(ticket.getFbTicket().getTipoPuesto(), 3, 1);
+				this.vista.getTable().setValueAt(ticket.getFbTicket().getRangoEtario(), 4, 1);
+				this.vista.getTable().setValueAt(ticket.getFbTicket().getExperienciaPrevia(), 5, 1);
+				this.vista.getTable().setValueAt(ticket.getFbTicket().getEstudiosCursados(), 6, 1);
+				this.vista.getTable().setValueAt(ticket.getFechaTicket(), 7, 1);
+				this.vista.getTable().setValueAt(ticket.getEstado().ticketDisponible(), 8, 1);
+				//this.vista.getTable().setValueAt(Agencia.getInstance().getEmpleadores().get(i)., 9, 1);
+				//this.vista.getTable().setValueAt(ticket.getEstadoTicket(), 10, 1);
+				//this.vista.getTable().setValueAt(Agencia.getInstance().getEmpleadores().get(i)., 11, 1);//ACÃ� MOSTRARÃ�A EL RESULTADO.
+			}
 		}
 	}
 

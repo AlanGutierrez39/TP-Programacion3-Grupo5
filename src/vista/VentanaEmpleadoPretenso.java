@@ -111,7 +111,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		cartelBienvenido.setFont(new Font("Dialog", Font.BOLD, 18));
 		panelColumna_2.add(cartelBienvenido);
 		
-		JLabel titulo = new JLabel("Sistema de Gestión de Búsquedas Laborales");
+		JLabel titulo = new JLabel("Sistema de Gesti\u00f3n de B\u00fasquedas Laborales");
 		titulo.setHorizontalAlignment(SwingConstants.CENTER);
 		panelColumna_2.add(titulo);
 		
@@ -136,7 +136,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panelColumna_2.add(panel_Contrasena);
 		panel_Contrasena.setLayout(new GridLayout(2, 1, 0, 0));
 		
-		JLabel contrasenaLabel = new JLabel("Contraseña");
+		JLabel contrasenaLabel = new JLabel("Contrase\u00f1a");
 		contrasenaLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_Contrasena.add(contrasenaLabel);
 		
@@ -144,7 +144,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_Contrasena.add(panel_2);
 		
 		passwordField = new JPasswordField();
-		passwordField.setToolTipText("Contraseña");
+		passwordField.setToolTipText("Contrase\u00f1a");
 		passwordField.setColumns(20);
 		this.passwordField.addKeyListener(this);
 		panel_2.add(passwordField);
@@ -162,7 +162,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_Boton.add(loginButton);
 		this.loginButton.setEnabled(false);
 		
-		JLabel contrasenaOlvidada = new JLabel("¿Olvidaste la contraseña?");
+		JLabel contrasenaOlvidada = new JLabel("\u00bfOlvidaste la contrase\u00f1a?");
 		contrasenaOlvidada.setHorizontalAlignment(SwingConstants.CENTER);
 		panelColumna_2.add(contrasenaOlvidada);
 		
@@ -171,7 +171,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panelColumna_2.add(panel_BotonRegistrate);
 		panel_BotonRegistrate.setLayout(new GridLayout(0, 2, 0, 0));
 		
-		JLabel nuevoUsuario = new JLabel("¿Nuevo usuario?");
+		JLabel nuevoUsuario = new JLabel("\u00bfNuevo usuario?");
 		panel_BotonRegistrate.add(nuevoUsuario);
 		nuevoUsuario.setHorizontalAlignment(SwingConstants.RIGHT);
 		
@@ -179,7 +179,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_Boton_2.setBackground(new Color(30, 144, 255));
 		panel_BotonRegistrate.add(panel_Boton_2);
 		
-		JButton registrarseButton = new JButton("¡Registrate!");
+		JButton registrarseButton = new JButton("\u00a1Registrate!");
 		registrarseButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tabbedPane.setSelectedIndex(1);
@@ -187,7 +187,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		});
 		registrarseButton.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_Boton_2.add(registrarseButton);
-		registrarseButton.setToolTipText("¡Registrate!");
+		registrarseButton.setToolTipText("\u00a1Registrate!");
 		registrarseButton.setEnabled(true);
 		
 		JPanel panelColumna_3 = new JPanel();
@@ -265,7 +265,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panelColumna_2_1.add(panel_DireccionNueva);
 		panel_DireccionNueva.setLayout(new GridLayout(1, 2, 0, 0));
 		
-		JLabel direccionLabel = new JLabel("Dirección:");
+		JLabel direccionLabel = new JLabel("Direcci\u00f3n:");
 		direccionLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_DireccionNueva.add(direccionLabel);
 		
@@ -287,7 +287,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		
 		textField_8 = new JFormattedTextField();
 		panel_6.add(textField_8);
-		textField_8.setToolTipText("Número");
+		textField_8.setToolTipText("N\u00famero");
 		textField_8.setColumns(5);
 		this.textField_8.addKeyListener(this);
 		
@@ -296,7 +296,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		
 		textField_9 = new JTextField();
 		panel_7.add(textField_9);
-		textField_9.setToolTipText("Descripción");
+		textField_9.setToolTipText("Descripci\u00f3n");
 		textField_9.setColumns(10);
 		this.textField_9.addKeyListener(this);
 		
@@ -304,7 +304,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panelColumna_2_1.add(panel_UsuarioNuevo_1);
 		panel_UsuarioNuevo_1.setLayout(new GridLayout(1, 2, 0, 0));
 		
-		JLabel usuarioLabel_1_1 = new JLabel("Teléfono:");
+		JLabel usuarioLabel_1_1 = new JLabel("Tel\u00e9fono:");
 		usuarioLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_UsuarioNuevo_1.add(usuarioLabel_1_1);
 		
@@ -312,7 +312,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_UsuarioNuevo_1.add(panel_1_1_2);
 		
 		textField_6 = new JTextField();
-		textField_6.setToolTipText("Teléfono");
+		textField_6.setToolTipText("Tel\u00e9fono");
 		textField_6.setColumns(30);
 		this.textField_6.addKeyListener(this);
 		panel_1_1_2.add(textField_6);
@@ -355,7 +355,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panelColumna_2_1.add(panel_ContrasenaNuevo);
 		panel_ContrasenaNuevo.setLayout(new GridLayout(1, 2, 0, 0));
 		
-		JLabel contrasenaLabel_1 = new JLabel("Contraseña:");
+		JLabel contrasenaLabel_1 = new JLabel("Contrase\u00f1a:");
 		contrasenaLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_ContrasenaNuevo.add(contrasenaLabel_1);
 		
@@ -363,7 +363,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_ContrasenaNuevo.add(panel_2_1);
 		
 		passwordField_1 = new JPasswordField();
-		passwordField_1.setToolTipText("Contraseña");
+		passwordField_1.setToolTipText("Contrase\u00f1a");
 		passwordField_1.setColumns(30);
 		this.passwordField_1.addKeyListener(this);
 		panel_2_1.add(passwordField_1);
@@ -443,32 +443,68 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_3.add(panel_4);
 		panel_4.setLayout(new GridLayout(9, 4, 0, 0));
 		
-		JLabel lblNewLabel = new JLabel("Locación:");
+		JLabel lblNewLabel = new JLabel("Locaci\u00f3n:");
 		panel_4.add(lblNewLabel);
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Home Office");
+		rdbtnNewRadioButton.setActionCommand("Home Office");
+		rdbtnNewRadioButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup.add(rdbtnNewRadioButton);
 		panel_4.add(rdbtnNewRadioButton);
 		
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Presencial");
+		rdbtnNewRadioButton_1.setActionCommand("Presencial");
+		rdbtnNewRadioButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup.add(rdbtnNewRadioButton_1);
 		panel_4.add(rdbtnNewRadioButton_1);
 		
 		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Indistinto");
+		rdbtnNewRadioButton_2.setActionCommand("Indistinto");
+		rdbtnNewRadioButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup.add(rdbtnNewRadioButton_2);
 		panel_4.add(rdbtnNewRadioButton_2);
 		
-		JLabel lblNewLabel_1 = new JLabel("Remuneración:");
+		JLabel lblNewLabel_1 = new JLabel("Remuneraci\u00f3n:");
 		panel_4.add(lblNewLabel_1);
 		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Hasta V1");
+		rdbtnNewRadioButton_3.setActionCommand("Hasta V1");
+		rdbtnNewRadioButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_1.add(rdbtnNewRadioButton_3);
 		
 		panel_4.add(rdbtnNewRadioButton_3);
 		JRadioButton rdbtnNewRadioButton_1_1 = new JRadioButton("Entre V1 y V2");
+		rdbtnNewRadioButton_1_1.setActionCommand("Entre V1 y V2");
+		rdbtnNewRadioButton_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_1.add(rdbtnNewRadioButton_1_1);
 		
 		panel_4.add(rdbtnNewRadioButton_1_1);
-		JRadioButton rdbtnNewRadioButton_2_1 = new JRadioButton("Más de V2");
+		JRadioButton rdbtnNewRadioButton_2_1 = new JRadioButton("M\u00e1s de V2");
+		rdbtnNewRadioButton_2_1.setActionCommand("M\u00e1s de V2");
+		rdbtnNewRadioButton_2_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_1.add(rdbtnNewRadioButton_2_1);
 		
 		panel_4.add(rdbtnNewRadioButton_2_1);
@@ -476,29 +512,65 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_4.add(lblNewLabel_2);
 		
 		JRadioButton rdbtnNewRadioButton_4 = new JRadioButton("Media");
+		rdbtnNewRadioButton_4.setActionCommand("Media");
+		rdbtnNewRadioButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_2.add(rdbtnNewRadioButton_4);
 		panel_4.add(rdbtnNewRadioButton_4);
 		
 		JRadioButton rdbtnNewRadioButton_1_2 = new JRadioButton("Completa");
+		rdbtnNewRadioButton_1_2.setActionCommand("Completa");
+		rdbtnNewRadioButton_1_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_2.add(rdbtnNewRadioButton_1_2);
 		panel_4.add(rdbtnNewRadioButton_1_2);
 		
 		JRadioButton rdbtnNewRadioButton_2_2 = new JRadioButton("Extendida");
+		rdbtnNewRadioButton_2_2.setActionCommand("Extendida");
+		rdbtnNewRadioButton_2_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_2.add(rdbtnNewRadioButton_2_2);
 		panel_4.add(rdbtnNewRadioButton_2_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Tipo de Puesto:");
 		panel_4.add(lblNewLabel_3);
 		
-		JRadioButton rdbtnNewRadioButton_5 = new JRadioButton("Júnior");
+		JRadioButton rdbtnNewRadioButton_5 = new JRadioButton("J\u00fanior");
+		rdbtnNewRadioButton_5.setActionCommand("J\u00fanior");
+		rdbtnNewRadioButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_3.add(rdbtnNewRadioButton_5);
 		panel_4.add(rdbtnNewRadioButton_5);
 		
-		JRadioButton rdbtnNewRadioButton_1_3 = new JRadioButton("Sénior");
+		JRadioButton rdbtnNewRadioButton_1_3 = new JRadioButton("S\u00e9nior");
+		rdbtnNewRadioButton_1_3.setActionCommand("S\u00e9nior");
+		rdbtnNewRadioButton_1_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_3.add(rdbtnNewRadioButton_1_3);
 		panel_4.add(rdbtnNewRadioButton_1_3);
 		
 		JRadioButton rdbtnNewRadioButton_2_3 = new JRadioButton("Managment");
+		rdbtnNewRadioButton_2_3.setActionCommand("Managment");
+		rdbtnNewRadioButton_2_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_3.add(rdbtnNewRadioButton_2_3);
 		panel_4.add(rdbtnNewRadioButton_2_3);
 		
@@ -506,14 +578,32 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_4.add(lblNewLabel_4);
 		
 		JRadioButton rdbtnNewRadioButton_6 = new JRadioButton("Menos de 40");
+		rdbtnNewRadioButton_6.setActionCommand("Menos de 40");
+		rdbtnNewRadioButton_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_4.add(rdbtnNewRadioButton_6);
 		panel_4.add(rdbtnNewRadioButton_6);
 		
 		JRadioButton rdbtnNewRadioButton_1_4 = new JRadioButton("Entre 40 y 50");
+		rdbtnNewRadioButton_1_4.setActionCommand("Entre 40 y 50");
+		rdbtnNewRadioButton_1_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_4.add(rdbtnNewRadioButton_1_4);
 		panel_4.add(rdbtnNewRadioButton_1_4);
 		
-		JRadioButton rdbtnNewRadioButton_2_4 = new JRadioButton("Más de 50");
+		JRadioButton rdbtnNewRadioButton_2_4 = new JRadioButton("M\u00e1s de 50");
+		rdbtnNewRadioButton_2_4.setActionCommand("M\u00e1s de 50");
+		rdbtnNewRadioButton_2_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_4.add(rdbtnNewRadioButton_2_4);
 		panel_4.add(rdbtnNewRadioButton_2_4);
 		
@@ -521,14 +611,32 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_4.add(lblNewLabel_5);
 		
 		JRadioButton rdbtnNewRadioButton_7 = new JRadioButton("Nada");
+		rdbtnNewRadioButton_7.setActionCommand("Nada");
+		rdbtnNewRadioButton_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_5.add(rdbtnNewRadioButton_7);
 		panel_4.add(rdbtnNewRadioButton_7);
 		
 		JRadioButton rdbtnNewRadioButton_1_5 = new JRadioButton("Media");
+		rdbtnNewRadioButton_1_5.setActionCommand("Media");
+		rdbtnNewRadioButton_1_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_5.add(rdbtnNewRadioButton_1_5);
 		panel_4.add(rdbtnNewRadioButton_1_5);
 		
 		JRadioButton rdbtnNewRadioButton_2_5 = new JRadioButton("Mucha");
+		rdbtnNewRadioButton_2_5.setActionCommand("Mucha");
+		rdbtnNewRadioButton_2_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_5.add(rdbtnNewRadioButton_2_5);
 		panel_4.add(rdbtnNewRadioButton_2_5);
 		
@@ -536,14 +644,32 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_4.add(lblNewLabel_6);
 		
 		JRadioButton rdbtnNewRadioButton_8 = new JRadioButton("Primario");
+		rdbtnNewRadioButton_8.setActionCommand("Primario");
+		rdbtnNewRadioButton_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_6.add(rdbtnNewRadioButton_8);
 		panel_4.add(rdbtnNewRadioButton_8);
 		
 		JRadioButton rdbtnNewRadioButton_1_6 = new JRadioButton("Secundario");
+		rdbtnNewRadioButton_1_6.setActionCommand("Secundario");
+		rdbtnNewRadioButton_1_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_6.add(rdbtnNewRadioButton_1_6);
 		panel_4.add(rdbtnNewRadioButton_1_6);
 		
 		JRadioButton rdbtnNewRadioButton_2_6 = new JRadioButton("Universitario");
+		rdbtnNewRadioButton_2_6.setActionCommand("Universitario");
+		rdbtnNewRadioButton_2_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_6.add(rdbtnNewRadioButton_2_6);
 		panel_4.add(rdbtnNewRadioButton_2_6);
 		
@@ -551,14 +677,32 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_4.add(lblNewLabel_10);
 		
 		JRadioButton rdbtnNewRadioButton_9 = new JRadioButton("Salud");
+		rdbtnNewRadioButton_9.setActionCommand("Salud");
+		rdbtnNewRadioButton_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_7.add(rdbtnNewRadioButton_9);
 		panel_4.add(rdbtnNewRadioButton_9);
 		
 		JRadioButton rdbtnNewRadioButton_10 = new JRadioButton("Comercio Local");
+		rdbtnNewRadioButton_10.setActionCommand("Comercio Local");
+		rdbtnNewRadioButton_10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_7.add(rdbtnNewRadioButton_10);
 		panel_4.add(rdbtnNewRadioButton_10);
 		
 		JRadioButton rdbtnNewRadioButton_11 = new JRadioButton("Comercio Internacional");
+		rdbtnNewRadioButton_11.setActionCommand("Comercio Internacional");
+		rdbtnNewRadioButton_11.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
 		buttonGroup_7.add(rdbtnNewRadioButton_11);
 		panel_4.add(rdbtnNewRadioButton_11);
 		
@@ -573,6 +717,14 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
+				buttonGroup.getSelection();
+				buttonGroup_1.getSelection();
+				buttonGroup_2.getSelection();
+				buttonGroup_3.getSelection();
+				buttonGroup_4.getSelection();
+				buttonGroup_5.getSelection();
+				buttonGroup_6.getSelection();
+				buttonGroup_7.getSelection();
 			}
 		});
 		panel_4.add(btnNewButton_2);
@@ -632,10 +784,10 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_ListaEmpleadores.add(list);
 		
 		JPanel panel_RondaEleccion = new JPanel();
-		panel_RondaEleccion.setToolTipText("Ronda de Elecci�n");
-		tabbedPane.addTab("Ronda de Elecci�n", null, panel_RondaEleccion, "Ronda de Elecci�n");
+		panel_RondaEleccion.setToolTipText("Ronda de Elecci\u00f3n");
+		tabbedPane.addTab("Ronda de Elecci\u00f3n", null, panel_RondaEleccion, "Ronda de Elecci\u00f3n");
 		
-		JButton btnNewButton_4 = new JButton("Mostrar elecci�n");
+		JButton btnNewButton_4 = new JButton("Mostrar elecci\u00f3n");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
