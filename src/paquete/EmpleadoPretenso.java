@@ -143,6 +143,7 @@ public class EmpleadoPretenso extends Persona implements IPersona, Serializable,
 									
 									ts.getEmpleador().getTicket().setCantEmpleadosObtenidos(1);
 									ts.setEstado("Contratado");
+									this.eliminarObservable(ts);
 									this.setTicketSimplificado(ts);
 									Agencia.getInstance().emilinarTicketSimplificado(ts);
 									

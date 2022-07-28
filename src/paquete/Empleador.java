@@ -118,6 +118,7 @@ public class Empleador extends Persona implements  IPersona, Runnable
 		
 			TicketSimplificado ts = new TicketSimplificado(this.getRubro(), locacion, this);
 			Agencia.getInstance().agregarTicketSimplificado(ts);
+			System.out.println(this.getNombUsuario()+" agrego un nuevo ts");
 		}
 		
 	}

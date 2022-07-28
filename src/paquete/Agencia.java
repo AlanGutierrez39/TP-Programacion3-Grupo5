@@ -421,8 +421,9 @@ public class Agencia
 			if(this.bolsaDeEmpleo.get(i).getTipoTrabajo().equals(empleado.getTicket().getFbTicket().getTipoTrabajo()))
 			{
 				this.bolsaDeEmpleo.get(i).setEstado("Bloqueado");
-				Util.espera(); //simula el envio de mensaje al empleador
+				//Util.espera(); //simula el envio de mensaje al empleador
 				
+				System.out.println(this.bolsaDeEmpleo.size());
 				if(this.bolsaDeEmpleo.get(i).getLocacion().equals(empleado.getTicket().getFbTicket().getLocacion()))
 				{
 					if (this.bolsaDeEmpleo.get(i).getEmpleador().getTicket().getCantEmpleadosObtenidos() < this.bolsaDeEmpleo.get(i).getEmpleador().getTicket().getCantEmpleadosSolicitados())
@@ -432,7 +433,9 @@ public class Agencia
 						 no se llega a ejecutar esta parte del código
 						 tampoco el update de empleado pretenso!
 						 */
-						System.out.println(this.bolsaDeEmpleo.get(i).getEmpleador().getNombre());
+						//System.out.println(this.bolsaDeEmpleo.get(i));
+						//System.out.println(this.bolsaDeEmpleo.get(i).getEmpleador().getNombre());
+						System.out.println(empleado.getNombre()+" "+empleado.getApellido()+" fue contratado por "+ this.bolsaDeEmpleo.get(i).getEmpleador().getNombUsuario()+"----------");
 						this.bolsaDeEmpleo.get(i).getEmpleador().getTicket().setCantEmpleadosObtenidos(1);
 						this.bolsaDeEmpleo.get(i).setEstado("Contratado");
 						empleado.setTicketSimplificado(this.bolsaDeEmpleo.get(i));
