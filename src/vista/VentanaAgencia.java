@@ -73,8 +73,8 @@ public class VentanaAgencia extends JFrame implements IVistaAgencia, MouseListen
 		contentPane.add(tabbedPane, BorderLayout.CENTER);
 		
 		JPanel panel_VisualizacionDatos = new JPanel();
-		panel_VisualizacionDatos.setToolTipText("Visualización de datos");
-		tabbedPane.addTab("Visualización de datos", null, panel_VisualizacionDatos, "Visualización de datos");
+		panel_VisualizacionDatos.setToolTipText("Visualizaci\u00F3n de datos");
+		tabbedPane.addTab("Visualizaci\u00F3n de datos", null, panel_VisualizacionDatos, "Visualizaci\u00F3n de datos");
 		panel_VisualizacionDatos.setLayout(new BorderLayout(0, 0));
 		
 		list1 = new JList<String>();
@@ -154,16 +154,16 @@ public class VentanaAgencia extends JFrame implements IVistaAgencia, MouseListen
 		JPanel panel_3 = new JPanel();
 		panel_Botones.add(panel_3);
 		
-		JToggleButton rondaContratacionButton = new JToggleButton("Activar Ronda de Contratación");
+		JToggleButton rondaContratacionButton = new JToggleButton("Activar Ronda de Contrataci\u00F3n");
 		panel_3.add(rondaContratacionButton);
 		rondaContratacionButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
 				if (!isRondaContratacionActivada()) {
-					rondaContratacionButton.setText("Desactivar Ronda de Contratación");
+					rondaContratacionButton.setText("Desactivar Ronda de Contrataci\u00F3n");
 					setRondaContratacionActivada(true);
 				} else {
-					rondaContratacionButton.setText("Activar Ronda de Contratación");
+					rondaContratacionButton.setText("Activar Ronda de Contrataci\u00F3n");
 					setRondaContratacionActivada(false);
 				}
 			}

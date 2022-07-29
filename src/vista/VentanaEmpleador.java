@@ -218,8 +218,10 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		soyPersona.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JRadioButton fisicaRadioButton = new JRadioButton("F\u00edsica");
+		fisicaRadioButton.setActionCommand("F\u00edsica");
 		fisicaRadioButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
 				nombreLabel.setText("Nombre:");
 				apellidoLabel.setText("Apellido:");
 				textField_3.setEnabled(true);
@@ -230,8 +232,10 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		panel_Persona.add(fisicaRadioButton);
 		
 		JRadioButton juridicaRadioButton = new JRadioButton("Jur\u00eddica");
+		juridicaRadioButton.setActionCommand("Jur\u00eddica");
 		juridicaRadioButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
 				nombreLabel.setText("Raz\u00f3n Social:");
 				apellidoLabel.setText("");
 				textField_3.setEnabled(false);
@@ -378,24 +382,30 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		panel_Rubro.add(rubroLabel);
 		
 		JRadioButton rdbtnNewRadioButton_9 = new JRadioButton("Salud");
+		rdbtnNewRadioButton_9.setActionCommand("Salud");
 		rdbtnNewRadioButton_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
 			}
 		});
 		buttonGroup_7.add(rdbtnNewRadioButton_9);
 		panel_Rubro.add(rdbtnNewRadioButton_9);
 		
 		JRadioButton rdbtnNewRadioButton_10 = new JRadioButton("Comercio local");
+		rdbtnNewRadioButton_10.setActionCommand("Comercio Local");
 		rdbtnNewRadioButton_10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
 			}
 		});
 		buttonGroup_7.add(rdbtnNewRadioButton_10);
 		panel_Rubro.add(rdbtnNewRadioButton_10);
 		
 		JRadioButton rdbtnNewRadioButton_11 = new JRadioButton("Comercio internacional");
+		rdbtnNewRadioButton_11.setActionCommand("Comercio Internacional");
 		rdbtnNewRadioButton_11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
 			}
 		});
 		buttonGroup_7.add(rdbtnNewRadioButton_11);
