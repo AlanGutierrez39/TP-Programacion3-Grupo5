@@ -2,8 +2,10 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Date;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 import excepciones.ContrasenaIncorrectaException;
@@ -14,6 +16,7 @@ import modelo.TicketEmpleadoPretenso;
 import paquete.Agencia;
 import paquete.Domicilio;
 import paquete.EmpleadoPretenso;
+import paquete.Empleador;
 import paquete.Persona;
 import vista.IVistaEmpleadoPretenso;
 import vista.VentanaEmpleadoPretenso;
@@ -98,7 +101,7 @@ public class ControladorEmpleadoPretenso implements ActionListener
 			int i = 0;
 			while (i < Agencia.getInstance().getEmpleadosPretensos().size() && !Agencia.getInstance().getEmpleadosPretensos().get(i).getNombUsuario().equals(usuario))
 				i++;
-			if (i < Agencia.getInstance().getEmpleadosPretensos().size())
+			try
 			{
 				Ticket ticket = Agencia.getInstance().getEmpleadosPretensos().get(i).getTicket();
 				this.vista.getTable().setValueAt(ticket.getFbTicket().getLocacion(), 0, 1);
@@ -112,6 +115,53 @@ public class ControladorEmpleadoPretenso implements ActionListener
 				this.vista.getTable().setValueAt(ticket.getFechaTicket(), 8, 1);
 				this.vista.getTable().setValueAt(ticket.getEstado().ticketDisponible(), 9, 1);
 				//this.vista.getTable().setValueAt(Agencia.getInstance().getEmpleadosPretensos().get(i)., 10, 1);//ACA MOSTRARIA EL RESULTADO.
+			} catch (Exception e1)
+			{
+				JOptionPane.showMessageDialog(null, "Necesita crear un ticket.");
+			}
+		}
+		else if (e.getActionCommand().equalsIgnoreCase("Mostrar lista")) {
+			String usuario;
+			if (!this.vista.getTextField().getText().isBlank())
+				usuario = this.vista.getTextField().getText();
+			else
+				usuario = this.vista.getTextField_1().getText();
+			int i = 0;
+			while (i < Agencia.getInstance().getListAsignacionEmpleadoPretensos().size() && !Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getEmpleadoPretenso().getNombUsuario().equals(usuario))
+				i++;
+			try
+			{
+				ArrayList<Empleador> empleadores = Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getListEmpleadores();
+				DefaultListModel<Empleador> listModel = new DefaultListModel<Empleador>();
+				this.vista.getList().setModel(listModel);
+				for(int j=0; j<Agencia.getInstance().getEmpleadores().size(); j++) {
+				    listModel.addElement(empleadores.get(j));
+				}
+			} catch (Exception e1)
+			{
+				JOptionPane.showMessageDialog(null, "Lista vac\u00eda.");
+			}
+		}
+		else if (e.getActionCommand().equalsIgnoreCase("Mostrar elecci\u00f3n")) {
+			String usuario;
+			if (!this.vista.getTextField().getText().isBlank())
+				usuario = this.vista.getTextField().getText();
+			else
+				usuario = this.vista.getTextField_1().getText();
+			int i = 0;
+			while (i < Agencia.getInstance().getListEleccionEmpleadoPretensos().size() && !Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getEmpleadoPretenso().getNombUsuario().equals(usuario))
+				i++;
+			try
+			{
+				ArrayList<Empleador> empleadores = Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getListEmpleadores();
+				DefaultListModel<Empleador> listModel = new DefaultListModel<Empleador>();
+				this.vista.getList().setModel(listModel);
+				for(int j=0; j<Agencia.getInstance().getEmpleadores().size(); j++) {
+				    listModel.addElement(empleadores.get(j));
+				}
+			} catch (Exception e1)
+			{
+				JOptionPane.showMessageDialog(null, "Lista vac\u00eda.");
 			}
 		}
 	}

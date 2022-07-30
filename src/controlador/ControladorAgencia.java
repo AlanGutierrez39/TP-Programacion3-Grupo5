@@ -82,6 +82,7 @@ public class ControladorAgencia implements ActionListener
 		} else if (e.getActionCommand().equalsIgnoreCase("Activar Ronda de Contratación"))
 		{
 			Agencia.getInstance().activarRondaEleccion();
+			this.vista.getLblNewLabel().setText("$" + Agencia.getInstance().getSaldoAgencia());
 		}
 	}
 }

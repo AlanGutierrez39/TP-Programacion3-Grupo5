@@ -2,6 +2,7 @@ package vista;
 
 import java.awt.event.ActionListener;
 
+import javax.swing.JLabel;
 import javax.swing.JList;
 
 public interface IVistaAgencia
@@ -13,4 +14,5 @@ public interface IVistaAgencia
 	public void setList1(JList<String> list1);
 	//public void setList2(JList list2);
 	//public void setList3(JList list3);
+	public JLabel getLblNewLabel();
 }

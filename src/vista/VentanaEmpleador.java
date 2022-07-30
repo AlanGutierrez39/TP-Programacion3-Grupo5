@@ -812,29 +812,39 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		panel_ListaEmpleados.setToolTipText("Lista de Empleados Pretensos");
 		tabbedPane.addTab("Lista de Empleados Pretensos", null, panel_ListaEmpleados, "Lista de Empleados Pretensos");
 		tabbedPane.setEnabledAt(3, false);
+		panel_ListaEmpleados.setLayout(new BorderLayout(0, 0));
+		
+		JPanel panel_8 = new JPanel();
+		panel_ListaEmpleados.add(panel_8, BorderLayout.NORTH);
 		
 		JButton btnNewButton_3 = new JButton("Mostrar lista");
+		btnNewButton_3.setActionCommand("Mostrar lista");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
 			}
 		});
-		panel_ListaEmpleados.add(btnNewButton_3);
-
+		panel_8.add(btnNewButton_3);
+		
 		list = new JList<EmpleadoPretenso>();
 		panel_ListaEmpleados.add(list);
 		
 		JPanel panel_RondaEleccion = new JPanel();
 		panel_RondaEleccion.setToolTipText("Ronda de Elecci\u00f3n");
 		tabbedPane.addTab("Ronda de Elecci\u00f3n", null, panel_RondaEleccion, "Ronda de Elecci\u00f3n");
+		panel_RondaEleccion.setLayout(new BorderLayout(0, 0));
 		
-		JButton btnNewButton_4 = new JButton("Mostrar elección");
+		JPanel panel_9 = new JPanel();
+		panel_RondaEleccion.add(panel_9, BorderLayout.NORTH);
+		
+		JButton btnNewButton_4 = new JButton("Mostrar elecci\u00f3n");
+		btnNewButton_4.setActionCommand("Mostrar elecci\u00f3n");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
 			}
 		});
-		panel_RondaEleccion.add(btnNewButton_4);
+		panel_9.add(btnNewButton_4);
 		
 		list_1 = new JList<EmpleadoPretenso>();
 		panel_RondaEleccion.add(list_1);

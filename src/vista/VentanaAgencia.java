@@ -38,6 +38,7 @@ import javax.swing.UIManager;
 import javax.swing.JToggleButton;
 import java.awt.Dimension;
 import javax.swing.AbstractListModel;
+import javax.swing.JTextPane;
 
 public class VentanaAgencia extends JFrame implements IVistaAgencia, MouseListener
 {
@@ -52,6 +53,7 @@ public class VentanaAgencia extends JFrame implements IVistaAgencia, MouseListen
 	private boolean rondaELActivada = false;
 	private boolean rondaContratacionActivada = false;
 	private ActionListener actionListener;
+	private JLabel lblNewLabel;
 	
 	/**
 	 * Create the frame.
@@ -185,6 +187,17 @@ public class VentanaAgencia extends JFrame implements IVistaAgencia, MouseListen
 		panel_Rondas.add(panel_Comisiones, BorderLayout.EAST);
 		panel_Comisiones.setLayout(new GridLayout(2, 0, 0, 0));
 		
+		JTextPane txtpnSaldoDeLa = new JTextPane();
+		txtpnSaldoDeLa.setFont(new Font("Arial", Font.ITALIC, 18));
+		txtpnSaldoDeLa.setBackground(new Color(240, 240, 240));
+		txtpnSaldoDeLa.setText("Saldo de la Agencia");
+		panel_Comisiones.add(txtpnSaldoDeLa);
+		
+		this.lblNewLabel = new JLabel("");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 24));
+		panel_Comisiones.add(lblNewLabel);
+		
 		JPanel panel_Publicidad = new JPanel();
 		contentPane.add(panel_Publicidad, BorderLayout.SOUTH);
 	}
@@ -277,6 +290,12 @@ public class VentanaAgencia extends JFrame implements IVistaAgencia, MouseListen
 	public void setList3(JList list3)
 	{
 		this.list3 = list3;
+	}
+
+	@Override
+	public JLabel getLblNewLabel()
+	{
+		return lblNewLabel;
 	}
 
 }
