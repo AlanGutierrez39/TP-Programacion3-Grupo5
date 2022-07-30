@@ -38,8 +38,8 @@ public interface IVistaEmpleadoPretenso
 	public ButtonGroup getButtonGroup_6();
 	public ButtonGroup getButtonGroup_7();
 	public JTable getTable();
-	public JList<Empleador> getList();
-	public void setList(JList<Empleador> list);
-	public JList<Empleador> getList_1();
-	public void setList_1(JList<Empleador> list_1);
+	public JList<String> getList();
+	public void setList(JList<String> list);
+	public JList<String> getList_1();
+	public void setList_1(JList<String> list_1);
 }

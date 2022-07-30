@@ -67,8 +67,8 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 	private final ButtonGroup buttonGroup_6 = new ButtonGroup();
 	private final ButtonGroup buttonGroup_7 = new ButtonGroup();
 	private JTable table;
-	private JList<Empleador> list;
-	private JList<Empleador> list_1;
+	private JList<String> list;
+	private JList<String> list_1;
 
 	/**
 	 * Create the frame.
@@ -785,7 +785,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		});
 		panel_8.add(btnNewButton_3);
 		
-		list = new JList<Empleador>();
+		list = new JList<String>();
 		panel_ListaEmpleadores.add(list);
 		
 		JPanel panel_RondaEleccion = new JPanel();
@@ -805,7 +805,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		});
 		panel_9.add(btnNewButton_4);
 		
-		list_1 = new JList<Empleador>();
+		list_1 = new JList<String>();
 		panel_RondaEleccion.add(list_1);
 		tabbedPane.setEnabledAt(4, false);
 		
@@ -988,22 +988,22 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		return table;
 	}
 
-	public JList<Empleador> getList()
+	public JList<String> getList()
 	{
 		return list;
 	}
 
-	public void setList(JList<Empleador> list)
+	public void setList(JList<String> list)
 	{
 		this.list = list;
 	}
 
-	public JList<Empleador> getList_1()
+	public JList<String> getList_1()
 	{
 		return list_1;
 	}
 
-	public void setList_1(JList<Empleador> list_1)
+	public void setList_1(JList<String> list_1)
 	{
 		this.list_1 = list_1;
 	}

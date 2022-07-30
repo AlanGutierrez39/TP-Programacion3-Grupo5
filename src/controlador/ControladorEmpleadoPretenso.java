@@ -113,7 +113,7 @@ public class ControladorEmpleadoPretenso implements ActionListener
 				this.vista.getTable().setValueAt(ticket.getFbTicket().getEstudiosCursados(), 6, 1);
 				this.vista.getTable().setValueAt(ticket.getFbTicket().getTipoTrabajo(), 7, 1);
 				this.vista.getTable().setValueAt(ticket.getFechaTicket(), 8, 1);
-				this.vista.getTable().setValueAt(ticket.getEstado().ticketDisponible(), 9, 1);
+				this.vista.getTable().setValueAt(ticket.getEstado().toString(), 9, 1);
 				//this.vista.getTable().setValueAt(Agencia.getInstance().getEmpleadosPretensos().get(i)., 10, 1);//ACA MOSTRARIA EL RESULTADO.
 			} catch (Exception e1)
 			{
@@ -131,11 +131,13 @@ public class ControladorEmpleadoPretenso implements ActionListener
 				i++;
 			try
 			{
-				ArrayList<Empleador> empleadores = Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getListEmpleadores();
-				DefaultListModel<Empleador> listModel = new DefaultListModel<Empleador>();
+				DefaultListModel<String> listModel = new DefaultListModel<String>();
 				this.vista.getList().setModel(listModel);
 				for(int j=0; j<Agencia.getInstance().getEmpleadores().size(); j++) {
-				    listModel.addElement(empleadores.get(j));
+					if (Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getListEmpleadores().get(j).isPersonaJuridica())
+						listModel.addElement(Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getListEmpleadores().get(j).getNomRazonS());
+					else
+						listModel.addElement(Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getListEmpleadores().get(j).getNombre() + " " + Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getListEmpleadores().get(j).getApellido());
 				}
 			} catch (Exception e1)
 			{
@@ -153,11 +155,13 @@ public class ControladorEmpleadoPretenso implements ActionListener
 				i++;
 			try
 			{
-				ArrayList<Empleador> empleadores = Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getListEmpleadores();
-				DefaultListModel<Empleador> listModel = new DefaultListModel<Empleador>();
+				DefaultListModel<String> listModel = new DefaultListModel<String>();
 				this.vista.getList().setModel(listModel);
 				for(int j=0; j<Agencia.getInstance().getEmpleadores().size(); j++) {
-				    listModel.addElement(empleadores.get(j));
+					if (Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getListEmpleadores().get(j).isPersonaJuridica())
+						listModel.addElement(Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getListEmpleadores().get(j).getNomRazonS());
+					else
+						listModel.addElement(Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getListEmpleadores().get(j).getNombre() + " " + Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getListEmpleadores().get(j).getApellido());
 				}
 			} catch (Exception e1)
 			{

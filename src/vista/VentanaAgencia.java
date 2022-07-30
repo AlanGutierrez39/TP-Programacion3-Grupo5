@@ -182,7 +182,7 @@ public class VentanaAgencia extends JFrame implements IVistaAgencia, MouseListen
 		panel_Listas.add(list_RondaContratacion);
 		
 		JPanel panel_Comisiones = new JPanel();
-		panel_Comisiones.setPreferredSize(new Dimension(120, 10));
+		panel_Comisiones.setPreferredSize(new Dimension(200, 10));
 		panel_Comisiones.setBorder(new TitledBorder(null, "Comisiones", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_Rondas.add(panel_Comisiones, BorderLayout.EAST);
 		panel_Comisiones.setLayout(new GridLayout(2, 0, 0, 0));
