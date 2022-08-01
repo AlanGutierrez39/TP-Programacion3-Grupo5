@@ -84,14 +84,6 @@ public class ControladorEmpleador implements ActionListener
 			}
 		}
 		else if (e.getActionCommand().equalsIgnoreCase("Crear ticket")) {
-			System.out.println(this.vista.getButtonGroup().getSelection());
-			System.out.println(this.vista.getButtonGroup_1().getSelection());
-			System.out.println(this.vista.getButtonGroup_2().getSelection());
-			System.out.println(this.vista.getButtonGroup_3().getSelection());
-			System.out.println(this.vista.getButtonGroup_4().getSelection());
-			System.out.println(this.vista.getButtonGroup_5().getSelection());
-			System.out.println(this.vista.getButtonGroup_6().getSelection());
-			System.out.println(this.vista.getButtonGroup_7().getSelection());
 			String usuario;
 			if (!this.vista.getTextField().getText().isBlank())
 				usuario = this.vista.getTextField().getText();
@@ -100,7 +92,7 @@ public class ControladorEmpleador implements ActionListener
 			int i = 0;
 			while (i < Agencia.getInstance().getEmpleadores().size() && !Agencia.getInstance().getEmpleadores().get(i).getNombUsuario().equals(usuario))
 				i++;
-			//Agencia.getInstance().getEmpleadores().get(i).setTicket(new TicketEmpleador(new FormularioBusqueda(this.vista.getButtonGroup().getSelection().getActionCommand(), this.vista.getButtonGroup_1().getSelection().getActionCommand(), this.vista.getButtonGroup_2().getSelection().getActionCommand(), this.vista.getButtonGroup_3().getSelection().getActionCommand(), this.vista.getButtonGroup_4().getSelection().getActionCommand(), this.vista.getButtonGroup_5().getSelection().getActionCommand(), this.vista.getButtonGroup_6().getSelection().getActionCommand(), this.vista.getButtonGroup_7().getSelection().getActionCommand()), new Date(2022, 06, 28), 1, 0));
+			//Agencia.getInstance().getEmpleadores().get(i).setTicket(new TicketEmpleador(new FormularioBusqueda(this.vista.getButtonGroup().getSelection().getActionCommand(), this.vista.getButtonGroup_1().getSelection().getActionCommand(), this.vista.getButtonGroup_2().getSelection().getActionCommand(), this.vista.getButtonGroup_3().getSelection().getActionCommand(), this.vista.getButtonGroup_4().getSelection().getActionCommand(), this.vista.getButtonGroup_5().getSelection().getActionCommand(), this.vista.getButtonGroup_6().getSelection().getActionCommand(), this.vista.getButtonGroup_8().getSelection().getActionCommand()), new Date(2022, 06, 28), 1, 0));
 			//falta setTicket
 		}else if (e.getActionCommand().equalsIgnoreCase("Ver ticket")) {
 			String usuario;
@@ -121,11 +113,12 @@ public class ControladorEmpleador implements ActionListener
 				this.vista.getTable().setValueAt(ticket.getFbTicket().getRangoEtario(), 4, 1);
 				this.vista.getTable().setValueAt(ticket.getFbTicket().getExperienciaPrevia(), 5, 1);
 				this.vista.getTable().setValueAt(ticket.getFbTicket().getEstudiosCursados(), 6, 1);
-				this.vista.getTable().setValueAt(ticket.getFechaTicket(), 7, 1);
-				this.vista.getTable().setValueAt(ticket.getEstado().ticketDisponible(), 8, 1);
-				//this.vista.getTable().setValueAt(Agencia.getInstance().getEmpleadores().get(i)., 9, 1);
-				//this.vista.getTable().setValueAt(ticket.getEstadoTicket(), 10, 1);
-				//this.vista.getTable().setValueAt(Agencia.getInstance().getEmpleadores().get(i)., 11, 1);//ACÃ� MOSTRARÃ�A EL RESULTADO.
+				this.vista.getTable().setValueAt(ticket.getFbTicket().getTipoTrabajo(), 7, 1);
+				this.vista.getTable().setValueAt(ticket.getFechaTicket(), 8, 1);
+				this.vista.getTable().setValueAt(ticket.getEstado().ticketDisponible(), 9, 1);
+				//this.vista.getTable().setValueAt(Agencia.getInstance().getEmpleadores().get(i)., 10, 1);
+				//this.vista.getTable().setValueAt(ticket.getEstadoTicket(), 11, 1);
+				//this.vista.getTable().setValueAt(Agencia.getInstance().getEmpleadores().get(i)., 12, 1);//AC\u00c1 MOSTRAR\u00cdA EL RESULTADO.
 			} catch (Exception e1)
 			{
 				JOptionPane.showMessageDialog(null, "Necesita crear un ticket.");

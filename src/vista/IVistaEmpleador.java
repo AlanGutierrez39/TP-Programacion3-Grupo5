@@ -36,6 +36,7 @@ public interface IVistaEmpleador
 	public ButtonGroup getButtonGroup_5();
 	public ButtonGroup getButtonGroup_6();
 	public ButtonGroup getButtonGroup_7();
+	public ButtonGroup getButtonGroup_8();
 	public ButtonGroup getGroup();
 	public JTable getTable();
 	public JList<String> getList();

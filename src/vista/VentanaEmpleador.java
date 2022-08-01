@@ -69,6 +69,7 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 	private JTable table;
 	private JList<String> list;
 	private JList<String> list_1;
+	private final ButtonGroup buttonGroup_8 = new ButtonGroup();
 
 	/**
 	 * Create the frame.
@@ -489,6 +490,7 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 				{"Rango Etario:", null},
 				{"Experiencia Previa:", null},
 				{"Estudios Cursados:", null},
+				{"Tipo de Puesto:", null},
 				{"Fecha:", null},
 				{"Estado del Ticket:", null},
 				{"Cantidad de Empleados Solicitados:", null},
@@ -516,7 +518,7 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		JPanel panel_4 = new JPanel();
 		panel_4.setVisible(false);
 		panel_3.add(panel_4);
-		panel_4.setLayout(new GridLayout(8, 4, 0, 0));
+		panel_4.setLayout(new GridLayout(9, 4, 0, 0));
 		
 		JLabel lblNewLabel = new JLabel("Locaci\u00f3n:");
 		panel_4.add(lblNewLabel);
@@ -748,6 +750,39 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		buttonGroup_6.add(rdbtnNewRadioButton_2_6);
 		panel_4.add(rdbtnNewRadioButton_2_6);
 		
+		JLabel rubroLabel_1 = new JLabel("Rubro al que se dedica");
+		panel_4.add(rubroLabel_1);
+		
+		JRadioButton rdbtnNewRadioButton_9_1 = new JRadioButton("Salud");
+		buttonGroup_8.add(rdbtnNewRadioButton_9_1);
+		rdbtnNewRadioButton_9_1.setActionCommand("Salud");
+		rdbtnNewRadioButton_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
+		panel_4.add(rdbtnNewRadioButton_9_1);
+		
+		JRadioButton rdbtnNewRadioButton_10_1 = new JRadioButton("Comercio local");
+		buttonGroup_8.add(rdbtnNewRadioButton_10_1);
+		rdbtnNewRadioButton_10_1.setActionCommand("Comercio Local");
+		rdbtnNewRadioButton_10_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
+		panel_4.add(rdbtnNewRadioButton_10_1);
+		
+		JRadioButton rdbtnNewRadioButton_11_1 = new JRadioButton("Comercio internacional");
+		buttonGroup_8.add(rdbtnNewRadioButton_11_1);
+		rdbtnNewRadioButton_11_1.setActionCommand("Comercio Internacional");
+		rdbtnNewRadioButton_11_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
+		panel_4.add(rdbtnNewRadioButton_11_1);
+		
 		JLabel lblNewLabel_7 = new JLabel("");
 		panel_4.add(lblNewLabel_7);
 		
@@ -766,6 +801,7 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 				buttonGroup_4.getSelection();
 				buttonGroup_5.getSelection();
 				buttonGroup_6.getSelection();
+				buttonGroup_8.getSelection();
 			}
 		});
 		panel_4.add(btnNewButton_2);
@@ -790,7 +826,7 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Crear nuevo ticket");
-		btnNewButton.setActionCommand("Crear nuevo ticket");
+		btnNewButton_1.setActionCommand("Crear nuevo ticket");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -803,6 +839,7 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 				buttonGroup_4.clearSelection();
 				buttonGroup_5.clearSelection();
 				buttonGroup_6.clearSelection();
+				buttonGroup_8.clearSelection();
 			}
 		});
 		panel.add(btnNewButton_1);
@@ -1039,6 +1076,12 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 	public ButtonGroup getButtonGroup_7()
 	{
 		return buttonGroup_7;
+	}
+
+	@Override
+	public ButtonGroup getButtonGroup_8()
+	{
+		return buttonGroup_8;
 	}
 
 	@Override
