@@ -133,7 +133,7 @@ public class ControladorEmpleadoPretenso implements ActionListener
 			{
 				DefaultListModel<String> listModel = new DefaultListModel<String>();
 				this.vista.getList().setModel(listModel);
-				for(int j=0; j<Agencia.getInstance().getEmpleadores().size(); j++) {
+				for(int j=0; j<Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getListEmpleadores().size(); j++) {
 					if (Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getListEmpleadores().get(j).isPersonaJuridica())
 						listModel.addElement(Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(i).getListEmpleadores().get(j).getNomRazonS());
 					else
@@ -157,7 +157,7 @@ public class ControladorEmpleadoPretenso implements ActionListener
 			{
 				DefaultListModel<String> listModel = new DefaultListModel<String>();
 				this.vista.getList().setModel(listModel);
-				for(int j=0; j<Agencia.getInstance().getEmpleadores().size(); j++) {
+				for(int j=0; j<Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getListEmpleadores().size(); j++) {
 					if (Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getListEmpleadores().get(j).isPersonaJuridica())
 						listModel.addElement(Agencia.getInstance().getListEleccionEmpleadoPretensos().get(i).getListEmpleadores().get(j).getNomRazonS());
 					else
