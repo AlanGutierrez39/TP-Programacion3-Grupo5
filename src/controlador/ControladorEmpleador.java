@@ -2,21 +2,15 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Date;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 import excepciones.ContrasenaIncorrectaException;
 import excepciones.NombreDeUsuarioIncorrectoException;
-import modelo.FormularioBusqueda;
 import modelo.Ticket;
-import modelo.TicketEmpleadoPretenso;
-import modelo.TicketEmpleador;
 import paquete.Agencia;
 import paquete.Domicilio;
-import paquete.EmpleadoPretenso;
 import paquete.Empleador;
 import vista.IVistaEmpleador;
 import vista.VentanaEmpleador;
@@ -25,6 +19,8 @@ public class ControladorEmpleador implements ActionListener
 {
 	private Agencia agencia = Agencia.getInstance();
 	private IVistaEmpleador vista;
+	private String usuario;
+	private int i;
 	
 	public ControladorEmpleador()
 	{
@@ -52,6 +48,28 @@ public class ControladorEmpleador implements ActionListener
 		this.vista = vista;
 	}
 
+	public String getUsuario()
+	{
+		return usuario;
+	}
+
+	public void setUsuario(String usuario)
+	{
+		this.usuario = usuario;
+	}
+
+	public int getI()
+	{
+		return i;
+	}
+
+	public void setI(int i)
+	{
+		while (i < Agencia.getInstance().getEmpleadores().size() && !Agencia.getInstance().getEmpleadores().get(i).getNombUsuario().equals(this.usuario))
+			i++;
+		this.i = i;
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
@@ -62,6 +80,8 @@ public class ControladorEmpleador implements ActionListener
 				empleador = new Empleador(new Domicilio(this.vista.getTextField_5().getText(), 0, null) , this.vista.getTextField_6().getText(), this.vista.getTextField_7().getText(), this.vista.getTextField_1().getText(), this.vista.getPasswordField_1().getText(), this.vista.getTextField_2().getText(), this.vista.getTextField_3().getText(), Integer.parseInt(this.vista.getTextField_4().getText()), this.vista.getButtonGroup_7().getSelection().getActionCommand(), null, null);
 			else
 				empleador = new Empleador(new Domicilio(this.vista.getTextField_5().getText(), 0, null) , this.vista.getTextField_6().getText(), this.vista.getTextField_7().getText(), this.vista.getTextField_1().getText(), this.vista.getPasswordField_1().getText(), this.vista.getTextField_2().getText(), this.vista.getButtonGroup_7().getSelection().getActionCommand(), null, null);
+			setUsuario(this.vista.getTextField_1().getText());
+			setI(0);
 			Agencia.getInstance().agregarEmpleador(empleador);
 		}
 		else if (e.getActionCommand().equalsIgnoreCase("Entrar"))
@@ -69,6 +89,8 @@ public class ControladorEmpleador implements ActionListener
 			try
 			{
 				Agencia.getInstance().login(this.vista.getTextField().getText(), this.vista.getPasswordField().getText());
+				setUsuario(this.vista.getTextField().getText());
+				setI(0);
 				this.vista.getTabbedPane().setEnabledAt(0, false);
 				this.vista.getTabbedPane().setEnabledAt(1, false);
 				this.vista.getTabbedPane().setSelectedIndex(2);
@@ -84,28 +106,12 @@ public class ControladorEmpleador implements ActionListener
 			}
 		}
 		else if (e.getActionCommand().equalsIgnoreCase("Crear ticket")) {
-			String usuario;
-			if (!this.vista.getTextField().getText().isBlank())
-				usuario = this.vista.getTextField().getText();
-			else
-				usuario = this.vista.getTextField_1().getText();
-			int i = 0;
-			while (i < Agencia.getInstance().getEmpleadores().size() && !Agencia.getInstance().getEmpleadores().get(i).getNombUsuario().equals(usuario))
-				i++;
 			//Agencia.getInstance().getEmpleadores().get(i).setTicket(new TicketEmpleador(new FormularioBusqueda(this.vista.getButtonGroup().getSelection().getActionCommand(), this.vista.getButtonGroup_1().getSelection().getActionCommand(), this.vista.getButtonGroup_2().getSelection().getActionCommand(), this.vista.getButtonGroup_3().getSelection().getActionCommand(), this.vista.getButtonGroup_4().getSelection().getActionCommand(), this.vista.getButtonGroup_5().getSelection().getActionCommand(), this.vista.getButtonGroup_6().getSelection().getActionCommand(), this.vista.getButtonGroup_8().getSelection().getActionCommand()), new Date(2022, 06, 28), 1, 0));
 			//falta setTicket
 		}else if (e.getActionCommand().equalsIgnoreCase("Ver ticket")) {
-			String usuario;
-			if (!this.vista.getTextField().getText().isBlank())
-				usuario = this.vista.getTextField().getText();
-			else
-				usuario = this.vista.getTextField_1().getText();
-			int i = 0;
-			while (i < Agencia.getInstance().getEmpleadores().size() && !Agencia.getInstance().getEmpleadores().get(i).getNombUsuario().equals(usuario))
-				i++;
 			try
 			{
-				Ticket ticket = Agencia.getInstance().getEmpleadores().get(i).getTicket();
+				Ticket ticket = Agencia.getInstance().getEmpleadores().get(this.i).getTicket();
 				this.vista.getTable().setValueAt(ticket.getFbTicket().getLocacion(), 0, 1);
 				this.vista.getTable().setValueAt(ticket.getFbTicket().getRemuneracion(), 1, 1);
 				this.vista.getTable().setValueAt(ticket.getFbTicket().getCargaHoraria(), 2, 1);
@@ -117,49 +123,60 @@ public class ControladorEmpleador implements ActionListener
 				this.vista.getTable().setValueAt(ticket.getFechaTicket(), 8, 1);
 				this.vista.getTable().setValueAt(ticket.getEstado().ticketDisponible(), 9, 1);
 				//this.vista.getTable().setValueAt(Agencia.getInstance().getEmpleadores().get(i)., 10, 1);
-				//this.vista.getTable().setValueAt(ticket.getEstadoTicket(), 11, 1);
-				//this.vista.getTable().setValueAt(Agencia.getInstance().getEmpleadores().get(i)., 12, 1);//AC\u00c1 MOSTRAR\u00cdA EL RESULTADO.
+				int j=0;
+				while (j < Agencia.getInstance().getListaCoincidencias().size() && !Agencia.getInstance().getListaCoincidencias().get(j).getEmpleador().getNombUsuario().equals(this.usuario))
+					j++;
+				try
+				{
+					this.vista.getTable().setValueAt(Agencia.getInstance().getListaCoincidencias().get(j).getListEmpleadosPretensos().size(), 11, 1);
+					if (!Agencia.getInstance().getListaCoincidencias().get(j).getListEmpleadosPretensos().isEmpty())
+						this.vista.getTable().setValueAt("\u00c9xito", 12, 1);
+					else
+						this.vista.getTable().setValueAt("Fracaso", 12, 1);
+				} catch (Exception e1)
+				{
+					this.vista.getTable().setValueAt(0, 11, 1);
+					this.vista.getTable().setValueAt("Todavía no hubo ronda", 12, 1);
+				}
 			} catch (Exception e1)
 			{
 				JOptionPane.showMessageDialog(null, "Necesita crear un ticket.");
 			}
 		}
 		else if (e.getActionCommand().equalsIgnoreCase("Mostrar lista")) {
-			String usuario;
-			if (!this.vista.getTextField().getText().isBlank())
-				usuario = this.vista.getTextField().getText();
-			else
-				usuario = this.vista.getTextField_1().getText();
-			int i = 0;
-			while (i < Agencia.getInstance().getListAsignacionEmpleador().size() && !Agencia.getInstance().getListAsignacionEmpleador().get(i).getEmpleador().getNombUsuario().equals(usuario))
-				i++;
 			try
 			{
 				DefaultListModel<String> listModel = new DefaultListModel<String>();
 				this.vista.getList().setModel(listModel);
-				for(int j=0; j<Agencia.getInstance().getListAsignacionEmpleador().get(i).getListEmpleadosPretensos().size(); j++) {
-				    listModel.addElement(Agencia.getInstance().getListAsignacionEmpleador().get(i).getListEmpleadosPretensos().get(j).getNombre() + " " + Agencia.getInstance().getListAsignacionEmpleador().get(i).getListEmpleadosPretensos().get(j).getApellido());
+				for(int j=0; j<Agencia.getInstance().getListAsignacionEmpleador().get(this.i).getListEmpleadosPretensos().size(); j++) {
+				    listModel.addElement(Agencia.getInstance().getListAsignacionEmpleador().get(this.i).getListEmpleadosPretensos().get(j).getNombre() + " " + Agencia.getInstance().getListAsignacionEmpleador().get(this.i).getListEmpleadosPretensos().get(j).getApellido());
 				}
 			} catch (Exception e1)
 			{
 				JOptionPane.showMessageDialog(null, "Lista vac\u00eda.");
 			}
 		}
-		else if (e.getActionCommand().equalsIgnoreCase("Mostrar elecci\u00f3n")) {
-			String usuario;
-			if (!this.vista.getTextField().getText().isBlank())
-				usuario = this.vista.getTextField().getText();
+		else if (e.getActionCommand().equalsIgnoreCase("Elegir")) {
+			String empleadoElegido, nombre[];
+			int j=0, l=0;
+			empleadoElegido = this.vista.getList().getSelectedValue();
+			nombre = empleadoElegido.split(" ");
+			while (j < Agencia.getInstance().getEmpleadosPretensos().size() && !Agencia.getInstance().getEmpleadosPretensos().get(j).getNombre().equals(nombre[0]))
+				j++;
+			while (l < Agencia.getInstance().getListEleccionEmpleador().get(this.i).getListEmpleadosPretensos().size() && !Agencia.getInstance().getListEleccionEmpleador().get(this.i).getListEmpleadosPretensos().get(l).getNombre().equals(nombre[0]))
+				l++;
+			if (l==Agencia.getInstance().getListEleccionEmpleador().get(this.i).getListEmpleadosPretensos().size())
+				Agencia.getInstance().getListEleccionEmpleador().get(this.i).getListEmpleadosPretensos().add(l, Agencia.getInstance().getEmpleadosPretensos().get(j));
 			else
-				usuario = this.vista.getTextField_1().getText();
-			int i = 0;
-			while (i < Agencia.getInstance().getListEleccionEmpleador().size() && !Agencia.getInstance().getListEleccionEmpleador().get(i).getEmpleador().getNombUsuario().equals(usuario))
-				i++;
+				JOptionPane.showMessageDialog(null, "Empleado ya elegido.");
+		}
+		else if (e.getActionCommand().equalsIgnoreCase("Mostrar elecci\u00f3n")) {
 			try
 			{
 				DefaultListModel<String> listModel = new DefaultListModel<String>();
-				this.vista.getList().setModel(listModel);
-				for(int j=0; j<Agencia.getInstance().getListEleccionEmpleador().get(i).getListEmpleadosPretensos().size(); j++) {
-				    listModel.addElement(Agencia.getInstance().getListEleccionEmpleador().get(i).getListEmpleadosPretensos().get(j).getNombre() + " " + Agencia.getInstance().getListEleccionEmpleador().get(i).getListEmpleadosPretensos().get(j).getApellido());
+				this.vista.getList_1().setModel(listModel);
+				for(int j=0; j<Agencia.getInstance().getListEleccionEmpleador().get(this.i).getListEmpleadosPretensos().size(); j++) {
+				    listModel.addElement(Agencia.getInstance().getListEleccionEmpleador().get(this.i).getListEmpleadosPretensos().get(j).getNombre() + " " + Agencia.getInstance().getListEleccionEmpleador().get(this.i).getListEmpleadosPretensos().get(j).getApellido());
 				}
 			} catch (Exception e1)
 			{
@@ -167,5 +184,4 @@ public class ControladorEmpleador implements ActionListener
 			}
 		}
 	}
-
 }

@@ -3,7 +3,6 @@ package vista;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
@@ -31,8 +30,6 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
-import modelo.TicketEmpleadoPretenso;
-import paquete.EmpleadoPretenso;
 import java.awt.event.ActionEvent;
 
 public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyListener, MouseListener
@@ -865,6 +862,19 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		
 		list = new JList<String>();
 		panel_ListaEmpleados.add(list);
+		
+		JPanel panel_8_1 = new JPanel();
+		panel_ListaEmpleados.add(panel_8_1, BorderLayout.SOUTH);
+		
+		JButton btnNewButton_3_1 = new JButton("Elegir");
+		btnNewButton_3_1.setActionCommand("Elegir");
+		btnNewButton_3_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
+		btnNewButton_3_1.setToolTipText("Elegir");
+		panel_8_1.add(btnNewButton_3_1);
 		
 		JPanel panel_RondaEleccion = new JPanel();
 		panel_RondaEleccion.setToolTipText("Ronda de Elecci\u00f3n");

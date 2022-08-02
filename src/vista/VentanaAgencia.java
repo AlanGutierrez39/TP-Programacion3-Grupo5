@@ -1,54 +1,32 @@
 package vista;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
 import java.awt.Color;
-import javax.swing.border.BevelBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.ActionEvent;
-import java.awt.FlowLayout;
 import javax.swing.JTabbedPane;
 import javax.swing.border.TitledBorder;
 
-import controlador.ControladorAgencia;
-import paquete.Persona;
-
 import javax.swing.JList;
-import javax.swing.JComboBox;
-import javax.swing.JMenuBar;
-import java.awt.Button;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import java.awt.SystemColor;
-import javax.swing.UIManager;
 import javax.swing.JToggleButton;
 import java.awt.Dimension;
-import javax.swing.AbstractListModel;
 import javax.swing.JTextPane;
 
 public class VentanaAgencia extends JFrame implements IVistaAgencia, MouseListener
 {
 	private JPanel contentPane;
-	private JPanel panel2;
-	private JPanel panel3;
-	private JButton btnNewButton2;
 	private JList<String> list1;
 	private JList list2;
-	private JButton btnNewButton3;
 	private JList list3;
 	private boolean rondaELActivada = false;
 	private boolean rondaContratacionActivada = false;
@@ -185,13 +163,26 @@ public class VentanaAgencia extends JFrame implements IVistaAgencia, MouseListen
 		panel_Comisiones.setPreferredSize(new Dimension(200, 10));
 		panel_Comisiones.setBorder(new TitledBorder(null, "Comisiones", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_Rondas.add(panel_Comisiones, BorderLayout.EAST);
-		panel_Comisiones.setLayout(new GridLayout(2, 0, 0, 0));
+		panel_Comisiones.setLayout(new GridLayout(3, 0, 0, 0));
 		
 		JTextPane txtpnSaldoDeLa = new JTextPane();
 		txtpnSaldoDeLa.setFont(new Font("Arial", Font.ITALIC, 18));
 		txtpnSaldoDeLa.setBackground(new Color(240, 240, 240));
 		txtpnSaldoDeLa.setText("Saldo de la Agencia");
 		panel_Comisiones.add(txtpnSaldoDeLa);
+		
+		JPanel panel = new JPanel();
+		panel_Comisiones.add(panel);
+		
+		JButton btnNewButton = new JButton("Calcular comisi\u00f3n");
+		btnNewButton.setActionCommand("Calcular comisi\u00f3n");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
+		btnNewButton.setToolTipText("Calcular comisi\u00f3n");
+		panel.add(btnNewButton);
 		
 		this.lblNewLabel = new JLabel("");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);

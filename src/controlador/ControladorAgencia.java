@@ -84,13 +84,13 @@ public class ControladorAgencia implements ActionListener
 			Agencia.getInstance().generarUsusariosActivos();
 			Agencia.getInstance().activarRondaEncuentrosLaborales();
 		} else if (e.getActionCommand().equalsIgnoreCase("Activar Ronda de Contratación"))
-		{
-			DecimalFormat df = new DecimalFormat("#.00");
 			Agencia.getInstance().activarRondaEleccion();
-			Agencia.getInstance().actualizacionPuntajeUsuario();
-			Agencia.getInstance().setSaldoAgencia(Agencia.getInstance().getListaCoincidencias());
-			this.vista.getLblNewLabel().setText("$" + df.format(Agencia.getInstance().getSaldoAgencia()));
+		else if (e.getActionCommand().equalsIgnoreCase("Calcular comisi\u00f3n"))
+		{
+				DecimalFormat df = new DecimalFormat("0.00");
+				Agencia.getInstance().actualizacionPuntajeUsuario();
+				Agencia.getInstance().setSaldoAgencia(Agencia.getInstance().getListaCoincidencias());
+				this.vista.getLblNewLabel().setText("$" + df.format(Agencia.getInstance().getSaldoAgencia()));
 		}
-		
 	}
 }

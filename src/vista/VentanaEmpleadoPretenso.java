@@ -1,14 +1,11 @@
 package vista;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
 
 import javax.swing.border.BevelBorder;
@@ -24,13 +21,8 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.ActionEvent;
-import java.awt.FlowLayout;
 import javax.swing.JTabbedPane;
 import javax.swing.border.TitledBorder;
-
-import modelo.Ticket;
-import modelo.TicketEmpleadoPretenso;
-import paquete.Empleador;
 
 import javax.swing.JList;
 import javax.swing.JRadioButton;
@@ -787,6 +779,19 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		
 		list = new JList<String>();
 		panel_ListaEmpleadores.add(list);
+		
+		JPanel panel_8_1 = new JPanel();
+		panel_ListaEmpleadores.add(panel_8_1, BorderLayout.SOUTH);
+		
+		JButton btnNewButton_3_1 = new JButton("Elegir");
+		btnNewButton_3_1.setActionCommand("Elegir");
+		btnNewButton_3_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionListener.actionPerformed(e);
+			}
+		});
+		btnNewButton_3_1.setToolTipText("Elegir");
+		panel_8_1.add(btnNewButton_3_1);
 		
 		JPanel panel_RondaEleccion = new JPanel();
 		panel_RondaEleccion.setToolTipText("Ronda de Elecci\u00f3n");
