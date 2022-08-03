@@ -94,9 +94,6 @@ public class ControladorEmpleadoPretenso implements ActionListener
 			EmpleadoPretenso empleado = new EmpleadoPretenso(new Domicilio(this.vista.getTextField_5().getText(), Integer.parseInt(this.vista.getTextField_8().getText()), this.vista.getTextField_9().getText()) , this.vista.getTextField_6().getText(), this.vista.getTextField_7().getText(), this.vista.getTextField_1().getText(), this.vista.getPasswordField_1().getText(), this.vista.getTextField_2().getText(), this.vista.getTextField_3().getText(), Integer.parseInt(this.vista.getTextField_4().getText()), null);
 			setUsuario(this.vista.getTextField_1().getText());
 			setI(0);
-			Thread hilo = new Thread(Agencia.getInstance().getEmpleadosPretensos().get(this.i));
-			hilo.start();
-			//Agencia.getInstance().agregarEmpleadoPretenso(empleado);
 		}
 		else if (e.getActionCommand().equalsIgnoreCase("Entrar"))
 		{
@@ -105,8 +102,6 @@ public class ControladorEmpleadoPretenso implements ActionListener
 				Agencia.getInstance().login(this.vista.getTextField().getText(), this.vista.getPasswordField().getText());
 				setUsuario(this.vista.getTextField().getText());
 				setI(0);
-				Thread hilo = new Thread(Agencia.getInstance().getEmpleadosPretensos().get(this.i));
-				hilo.start();
 				this.vista.getTabbedPane().setEnabledAt(0, false);
 				this.vista.getTabbedPane().setEnabledAt(1, false);
 				this.vista.getTabbedPane().setSelectedIndex(2);
