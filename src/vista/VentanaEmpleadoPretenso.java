@@ -68,7 +68,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 	public VentanaEmpleadoPretenso()
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 515, 340);
+		setBounds(100, 100, 520, 340);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(30, 144, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -439,7 +439,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_4.add(lblNewLabel);
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Home Office");
-		rdbtnNewRadioButton.setActionCommand("Home Office");
+		rdbtnNewRadioButton.setActionCommand("HomeOffice");
 		rdbtnNewRadioButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -471,7 +471,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		JLabel lblNewLabel_1 = new JLabel("Remuneraci\u00f3n:");
 		panel_4.add(lblNewLabel_1);
 		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Hasta V1");
-		rdbtnNewRadioButton_3.setActionCommand("Hasta V1");
+		rdbtnNewRadioButton_3.setActionCommand("V1");
 		rdbtnNewRadioButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -481,7 +481,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		
 		panel_4.add(rdbtnNewRadioButton_3);
 		JRadioButton rdbtnNewRadioButton_1_1 = new JRadioButton("Entre V1 y V2");
-		rdbtnNewRadioButton_1_1.setActionCommand("Entre V1 y V2");
+		rdbtnNewRadioButton_1_1.setActionCommand("V2");
 		rdbtnNewRadioButton_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -491,7 +491,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		
 		panel_4.add(rdbtnNewRadioButton_1_1);
 		JRadioButton rdbtnNewRadioButton_2_1 = new JRadioButton("M\u00e1s de V2");
-		rdbtnNewRadioButton_2_1.setActionCommand("M\u00e1s de V2");
+		rdbtnNewRadioButton_2_1.setActionCommand("V3");
 		rdbtnNewRadioButton_2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -537,7 +537,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_4.add(lblNewLabel_3);
 		
 		JRadioButton rdbtnNewRadioButton_5 = new JRadioButton("J\u00fanior");
-		rdbtnNewRadioButton_5.setActionCommand("J\u00fanior");
+		rdbtnNewRadioButton_5.setActionCommand("Junior");
 		rdbtnNewRadioButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -547,7 +547,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_4.add(rdbtnNewRadioButton_5);
 		
 		JRadioButton rdbtnNewRadioButton_1_3 = new JRadioButton("S\u00e9nior");
-		rdbtnNewRadioButton_1_3.setActionCommand("S\u00e9nior");
+		rdbtnNewRadioButton_1_3.setActionCommand("Senior");
 		rdbtnNewRadioButton_1_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -580,7 +580,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_4.add(rdbtnNewRadioButton_6);
 		
 		JRadioButton rdbtnNewRadioButton_1_4 = new JRadioButton("Entre 40 y 50");
-		rdbtnNewRadioButton_1_4.setActionCommand("Entre 40 y 50");
+		rdbtnNewRadioButton_1_4.setActionCommand("40 a 50");
 		rdbtnNewRadioButton_1_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -590,7 +590,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_4.add(rdbtnNewRadioButton_1_4);
 		
 		JRadioButton rdbtnNewRadioButton_2_4 = new JRadioButton("M\u00e1s de 50");
-		rdbtnNewRadioButton_2_4.setActionCommand("M\u00e1s de 50");
+		rdbtnNewRadioButton_2_4.setActionCommand("Mas de 50");
 		rdbtnNewRadioButton_2_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -603,7 +603,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_4.add(lblNewLabel_5);
 		
 		JRadioButton rdbtnNewRadioButton_7 = new JRadioButton("Nada");
-		rdbtnNewRadioButton_7.setActionCommand("Nada");
+		rdbtnNewRadioButton_7.setActionCommand("NADA");
 		rdbtnNewRadioButton_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -613,7 +613,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_4.add(rdbtnNewRadioButton_7);
 		
 		JRadioButton rdbtnNewRadioButton_1_5 = new JRadioButton("Media");
-		rdbtnNewRadioButton_1_5.setActionCommand("Media");
+		rdbtnNewRadioButton_1_5.setActionCommand("MEDIA");
 		rdbtnNewRadioButton_1_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -623,7 +623,7 @@ public class VentanaEmpleadoPretenso extends JFrame implements IVistaEmpleadoPre
 		panel_4.add(rdbtnNewRadioButton_1_5);
 		
 		JRadioButton rdbtnNewRadioButton_2_5 = new JRadioButton("Mucha");
-		rdbtnNewRadioButton_2_5.setActionCommand("Mucha");
+		rdbtnNewRadioButton_2_5.setActionCommand("MUCHA");
 		rdbtnNewRadioButton_2_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);

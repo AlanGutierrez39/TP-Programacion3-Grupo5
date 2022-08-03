@@ -26,6 +26,14 @@ public interface IVistaEmpleador
 	public JTextField getTextField_7();
 	public JFormattedTextField getTextField_8();
 	public JTextField getTextField_9();
+	public JTextField getTextField_10();
+	public JTextField getTextField_11();
+	public JTextField getTextField_12();
+	public JTextField getTextField_13();
+	public JTextField getTextField_14();
+	public JTextField getTextField_15();
+	public JTextField getTextField_16();
+	public JTextField getTextField_17();
 	public JPasswordField getPasswordField();
 	public JPasswordField getPasswordField_1();
 	public ButtonGroup getButtonGroup();

@@ -67,6 +67,14 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 	private JList<String> list;
 	private JList<String> list_1;
 	private final ButtonGroup buttonGroup_8 = new ButtonGroup();
+	private JTextField textField_10;
+	private JTextField textField_11;
+	private JTextField textField_12;
+	private JTextField textField_13;
+	private JTextField textField_14;
+	private JTextField textField_15;
+	private JTextField textField_16;
+	private JTextField textField_17;
 
 	/**
 	 * Create the frame.
@@ -515,13 +523,13 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		JPanel panel_4 = new JPanel();
 		panel_4.setVisible(false);
 		panel_3.add(panel_4);
-		panel_4.setLayout(new GridLayout(9, 4, 0, 0));
+		panel_4.setLayout(new GridLayout(0, 5, 0, 0));
 		
 		JLabel lblNewLabel = new JLabel("Locaci\u00f3n:");
 		panel_4.add(lblNewLabel);
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Home Office");
-		rdbtnNewRadioButton.setActionCommand("Home Office");
+		rdbtnNewRadioButton.setActionCommand("HomeOffice");
 		rdbtnNewRadioButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -550,10 +558,23 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		buttonGroup.add(rdbtnNewRadioButton_2);
 		panel_4.add(rdbtnNewRadioButton_2);
 		
+		JPanel panel_10 = new JPanel();
+		panel_4.add(panel_10);
+		panel_10.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		JLabel lblValor = new JLabel("Valor:");
+		panel_10.add(lblValor);
+		
+		textField_10 = new JTextField();
+		textField_10.setText("");
+		this.textField_10.addKeyListener(this);
+		panel_10.add(textField_10);
+		textField_10.setColumns(10);
+		
 		JLabel lblNewLabel_1 = new JLabel("Remuneraci\u00f3n:");
 		panel_4.add(lblNewLabel_1);
 		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Hasta V1");
-		rdbtnNewRadioButton_3.setActionCommand("Hasta V1");
+		rdbtnNewRadioButton_3.setActionCommand("V1");
 		rdbtnNewRadioButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -563,7 +584,7 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		
 		panel_4.add(rdbtnNewRadioButton_3);
 		JRadioButton rdbtnNewRadioButton_1_1 = new JRadioButton("Entre V1 y V2");
-		rdbtnNewRadioButton_1_1.setActionCommand("Entre V1 y V2");
+		rdbtnNewRadioButton_1_1.setActionCommand("V2");
 		rdbtnNewRadioButton_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -573,7 +594,7 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		
 		panel_4.add(rdbtnNewRadioButton_1_1);
 		JRadioButton rdbtnNewRadioButton_2_1 = new JRadioButton("M\u00e1s de V2");
-		rdbtnNewRadioButton_2_1.setActionCommand("M\u00e1s de V2");
+		rdbtnNewRadioButton_2_1.setActionCommand("V3");
 		rdbtnNewRadioButton_2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -582,6 +603,19 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		buttonGroup_1.add(rdbtnNewRadioButton_2_1);
 		
 		panel_4.add(rdbtnNewRadioButton_2_1);
+		
+		JPanel panel_10_1 = new JPanel();
+		panel_4.add(panel_10_1);
+		panel_10_1.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		JLabel lblValor_1 = new JLabel("Valor:");
+		panel_10_1.add(lblValor_1);
+		
+		textField_11 = new JTextField();
+		textField_11.setText("");
+		textField_11.setColumns(10);
+		this.textField_11.addKeyListener(this);
+		panel_10_1.add(textField_11);
 		JLabel lblNewLabel_2 = new JLabel("Carga Horaria:");
 		panel_4.add(lblNewLabel_2);
 		
@@ -615,11 +649,24 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		buttonGroup_2.add(rdbtnNewRadioButton_2_2);
 		panel_4.add(rdbtnNewRadioButton_2_2);
 		
+		JPanel panel_10_2 = new JPanel();
+		panel_4.add(panel_10_2);
+		panel_10_2.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		JLabel lblValor_2 = new JLabel("Valor:");
+		panel_10_2.add(lblValor_2);
+		
+		textField_12 = new JTextField();
+		textField_12.setText("");
+		textField_12.setColumns(10);
+		this.textField_12.addKeyListener(this);
+		panel_10_2.add(textField_12);
+		
 		JLabel lblNewLabel_3 = new JLabel("Tipo de Puesto:");
 		panel_4.add(lblNewLabel_3);
 		
 		JRadioButton rdbtnNewRadioButton_5 = new JRadioButton("J\u00fanior");
-		rdbtnNewRadioButton_5.setActionCommand("J\u00fanior");
+		rdbtnNewRadioButton_5.setActionCommand("Junior");
 		rdbtnNewRadioButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -629,7 +676,7 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		panel_4.add(rdbtnNewRadioButton_5);
 		
 		JRadioButton rdbtnNewRadioButton_1_3 = new JRadioButton("S\u00e9nior");
-		rdbtnNewRadioButton_1_3.setActionCommand("S\u00e9nior");
+		rdbtnNewRadioButton_1_3.setActionCommand("Senior");
 		rdbtnNewRadioButton_1_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -648,6 +695,19 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		buttonGroup_3.add(rdbtnNewRadioButton_2_3);
 		panel_4.add(rdbtnNewRadioButton_2_3);
 		
+		JPanel panel_10_3 = new JPanel();
+		panel_4.add(panel_10_3);
+		panel_10_3.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		JLabel lblValor_3 = new JLabel("Valor:");
+		panel_10_3.add(lblValor_3);
+		
+		textField_13 = new JTextField();
+		textField_13.setText("");
+		textField_13.setColumns(10);
+		this.textField_13.addKeyListener(this);
+		panel_10_3.add(textField_13);
+		
 		JLabel lblNewLabel_4 = new JLabel("Rango Etario:");
 		panel_4.add(lblNewLabel_4);
 		
@@ -662,7 +722,7 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		panel_4.add(rdbtnNewRadioButton_6);
 		
 		JRadioButton rdbtnNewRadioButton_1_4 = new JRadioButton("Entre 40 y 50");
-		rdbtnNewRadioButton_1_4.setActionCommand("Entre 40 y 50");
+		rdbtnNewRadioButton_1_4.setActionCommand("40 a 50");
 		rdbtnNewRadioButton_1_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -672,7 +732,7 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		panel_4.add(rdbtnNewRadioButton_1_4);
 		
 		JRadioButton rdbtnNewRadioButton_2_4 = new JRadioButton("M\u00e1s de 50");
-		rdbtnNewRadioButton_2_4.setActionCommand("M\u00e1s de 50");
+		rdbtnNewRadioButton_2_4.setActionCommand("Mas de 50");
 		rdbtnNewRadioButton_2_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -681,11 +741,24 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		buttonGroup_4.add(rdbtnNewRadioButton_2_4);
 		panel_4.add(rdbtnNewRadioButton_2_4);
 		
+		JPanel panel_10_4 = new JPanel();
+		panel_4.add(panel_10_4);
+		panel_10_4.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		JLabel lblValor_4 = new JLabel("Valor:");
+		panel_10_4.add(lblValor_4);
+		
+		textField_14 = new JTextField();
+		textField_14.setText("");
+		textField_14.setColumns(10);
+		this.textField_14.addKeyListener(this);
+		panel_10_4.add(textField_14);
+		
 		JLabel lblNewLabel_5 = new JLabel("Experiencia previa:");
 		panel_4.add(lblNewLabel_5);
 		
 		JRadioButton rdbtnNewRadioButton_7 = new JRadioButton("Nada");
-		rdbtnNewRadioButton_7.setActionCommand("Nada");
+		rdbtnNewRadioButton_7.setActionCommand("NADA");
 		rdbtnNewRadioButton_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -695,7 +768,7 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		panel_4.add(rdbtnNewRadioButton_7);
 		
 		JRadioButton rdbtnNewRadioButton_1_5 = new JRadioButton("Media");
-		rdbtnNewRadioButton_1_5.setActionCommand("Media");
+		rdbtnNewRadioButton_1_5.setActionCommand("MEDIA");
 		rdbtnNewRadioButton_1_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -705,7 +778,7 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		panel_4.add(rdbtnNewRadioButton_1_5);
 		
 		JRadioButton rdbtnNewRadioButton_2_5 = new JRadioButton("Mucha");
-		rdbtnNewRadioButton_2_5.setActionCommand("Mucha");
+		rdbtnNewRadioButton_2_5.setActionCommand("MUCHA");
 		rdbtnNewRadioButton_2_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListener.actionPerformed(e);
@@ -713,6 +786,19 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		});
 		buttonGroup_5.add(rdbtnNewRadioButton_2_5);
 		panel_4.add(rdbtnNewRadioButton_2_5);
+		
+		JPanel panel_10_5 = new JPanel();
+		panel_4.add(panel_10_5);
+		panel_10_5.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		JLabel lblValor_5 = new JLabel("Valor:");
+		panel_10_5.add(lblValor_5);
+		
+		textField_15 = new JTextField();
+		textField_15.setText("");
+		textField_15.setColumns(10);
+		this.textField_15.addKeyListener(this);
+		panel_10_5.add(textField_15);
 		
 		JLabel lblNewLabel_6 = new JLabel("Estudios Cursados:");
 		panel_4.add(lblNewLabel_6);
@@ -747,6 +833,19 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 		buttonGroup_6.add(rdbtnNewRadioButton_2_6);
 		panel_4.add(rdbtnNewRadioButton_2_6);
 		
+		JPanel panel_10_6 = new JPanel();
+		panel_4.add(panel_10_6);
+		panel_10_6.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		JLabel lblValor_6 = new JLabel("Valor:");
+		panel_10_6.add(lblValor_6);
+		
+		textField_16 = new JTextField();
+		textField_16.setText("");
+		textField_16.setColumns(10);
+		this.textField_16.addKeyListener(this);
+		panel_10_6.add(textField_16);
+		
 		JLabel rubroLabel_1 = new JLabel("Rubro al que se dedica");
 		panel_4.add(rubroLabel_1);
 		
@@ -779,6 +878,19 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 			}
 		});
 		panel_4.add(rdbtnNewRadioButton_11_1);
+		
+		JPanel panel_10_7 = new JPanel();
+		panel_4.add(panel_10_7);
+		panel_10_7.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		JLabel lblValor_7 = new JLabel("Empleados solicitados:");
+		panel_10_7.add(lblValor_7);
+		
+		textField_17 = new JTextField();
+		textField_17.setText("");
+		textField_17.setColumns(10);
+		this.textField_17.addKeyListener(this);
+		panel_10_7.add(textField_17);
 		
 		JLabel lblNewLabel_7 = new JLabel("");
 		panel_4.add(lblNewLabel_7);
@@ -1152,6 +1264,62 @@ public class VentanaEmpleador extends JFrame implements IVistaEmpleador, KeyList
 	public void setList_1(JList<String> list_1)
 	{
 		this.list_1 = list_1;
+	}
+
+	@Override
+	public JTextField getTextField_10()
+	{
+		// TODO Auto-generated method stub
+		return textField_10;
+	}
+
+	@Override
+	public JTextField getTextField_11()
+	{
+		// TODO Auto-generated method stub
+		return textField_11;
+	}
+
+	@Override
+	public JTextField getTextField_12()
+	{
+		// TODO Auto-generated method stub
+		return textField_12;
+	}
+
+	@Override
+	public JTextField getTextField_13()
+	{
+		// TODO Auto-generated method stub
+		return textField_13;
+	}
+
+	@Override
+	public JTextField getTextField_14()
+	{
+		// TODO Auto-generated method stub
+		return textField_14;
+	}
+
+	@Override
+	public JTextField getTextField_15()
+	{
+		// TODO Auto-generated method stub
+		return textField_15;
+	}
+
+	@Override
+	public JTextField getTextField_16()
+	{
+		// TODO Auto-generated method stub
+		return textField_16;
+	}
+
+	@Override
+	public JTextField getTextField_17()
+	{
+		// TODO Auto-generated method stub
+		return textField_17;
 	}
 
 }

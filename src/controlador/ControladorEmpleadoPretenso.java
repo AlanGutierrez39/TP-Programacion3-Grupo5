@@ -94,7 +94,9 @@ public class ControladorEmpleadoPretenso implements ActionListener
 			EmpleadoPretenso empleado = new EmpleadoPretenso(new Domicilio(this.vista.getTextField_5().getText(), Integer.parseInt(this.vista.getTextField_8().getText()), this.vista.getTextField_9().getText()) , this.vista.getTextField_6().getText(), this.vista.getTextField_7().getText(), this.vista.getTextField_1().getText(), this.vista.getPasswordField_1().getText(), this.vista.getTextField_2().getText(), this.vista.getTextField_3().getText(), Integer.parseInt(this.vista.getTextField_4().getText()), null);
 			setUsuario(this.vista.getTextField_1().getText());
 			setI(0);
-			Agencia.getInstance().agregarEmpleadoPretenso(empleado);
+			Thread hilo = new Thread(Agencia.getInstance().getEmpleadosPretensos().get(this.i));
+			hilo.start();
+			//Agencia.getInstance().agregarEmpleadoPretenso(empleado);
 		}
 		else if (e.getActionCommand().equalsIgnoreCase("Entrar"))
 		{
@@ -103,6 +105,8 @@ public class ControladorEmpleadoPretenso implements ActionListener
 				Agencia.getInstance().login(this.vista.getTextField().getText(), this.vista.getPasswordField().getText());
 				setUsuario(this.vista.getTextField().getText());
 				setI(0);
+				Thread hilo = new Thread(Agencia.getInstance().getEmpleadosPretensos().get(this.i));
+				hilo.start();
 				this.vista.getTabbedPane().setEnabledAt(0, false);
 				this.vista.getTabbedPane().setEnabledAt(1, false);
 				this.vista.getTabbedPane().setSelectedIndex(2);
@@ -119,11 +123,12 @@ public class ControladorEmpleadoPretenso implements ActionListener
 		}
 		else if (e.getActionCommand().equalsIgnoreCase("Crear ticket")) {
 			Agencia.getInstance().getEmpleadosPretensos().get(this.i).setTicket(new TicketEmpleadoPretenso(new FormularioBusqueda(this.vista.getButtonGroup().getSelection().getActionCommand(), this.vista.getButtonGroup_1().getSelection().getActionCommand(), this.vista.getButtonGroup_2().getSelection().getActionCommand(), this.vista.getButtonGroup_3().getSelection().getActionCommand(), this.vista.getButtonGroup_4().getSelection().getActionCommand(), this.vista.getButtonGroup_5().getSelection().getActionCommand(), this.vista.getButtonGroup_6().getSelection().getActionCommand(), this.vista.getButtonGroup_7().getSelection().getActionCommand()), new Date(2022, 06, 28)));
+			Agencia.getInstance().getEmpleadosPretensos().get(this.i).getPuntajeUsuario();
 		}
 		else if (e.getActionCommand().equalsIgnoreCase("Ver ticket")) {
 			try
 			{
-				Ticket ticket = Agencia.getInstance().getEmpleadosPretensos().get(this.i).getTicket();
+				TicketEmpleadoPretenso ticket = Agencia.getInstance().getEmpleadosPretensos().get(this.i).getTicket();
 				this.vista.getTable().setValueAt(ticket.getFbTicket().getLocacion(), 0, 1);
 				this.vista.getTable().setValueAt(ticket.getFbTicket().getRemuneracion(), 1, 1);
 				this.vista.getTable().setValueAt(ticket.getFbTicket().getCargaHoraria(), 2, 1);
@@ -155,6 +160,7 @@ public class ControladorEmpleadoPretenso implements ActionListener
 		else if (e.getActionCommand().equalsIgnoreCase("Mostrar lista")) {
 			try
 			{
+				Agencia.getInstance().actualizacionPuntajeUsuario();
 				DefaultListModel<String> listModel = new DefaultListModel<String>();
 				this.vista.getList().setModel(listModel);
 				for(int j=0; j<Agencia.getInstance().getListAsignacionEmpleadoPretensos().get(this.i).getListEmpleadores().size(); j++) {

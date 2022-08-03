@@ -19,7 +19,7 @@ public class Empleador extends Persona implements  IPersona, Runnable
 	private  ValoracionAspecto listaPesos;                
 	
 	
-	//Tipo jurídico
+	//Tipo jur\u00eddico
 	public Empleador(Domicilio domicilio, String telefono, String mail, String nombUsuario, String contrasenia,
 			String nomRazonS, String rubro, TicketEmpleador ticket, ValoracionAspecto listaPesos)
 	{
@@ -35,7 +35,7 @@ public class Empleador extends Persona implements  IPersona, Runnable
 		this.listaPesos = listaPesos;
 	}
 
-	//Tipo física
+	//Tipo f\u00edsica
 	public Empleador(Domicilio domicilio, String telefono, String mail, String nombUsuario, String contrasenia,
 			String nombre, String apellido, int edad, String rubro, TicketEmpleador ticket, ValoracionAspecto listaPesos)
 	{
@@ -91,7 +91,7 @@ public class Empleador extends Persona implements  IPersona, Runnable
 
 	
 	/**
-	 * Cada empleador generaá 3 puestos de trabajo.
+	 * Cada empleador generaï¿½ 3 puestos de trabajo.
 	 */
 	@Override
 	public void run() 
@@ -124,6 +124,15 @@ public class Empleador extends Persona implements  IPersona, Runnable
 		}
 		
 	}
-	
+
+	public void setTicket(TicketEmpleador ticket)
+	{
+		this.ticket = ticket;
+	}
+
+	public void setListaPesos(ValoracionAspecto listaPesos)
+	{
+		this.listaPesos = listaPesos;
+	}
 	
 }
