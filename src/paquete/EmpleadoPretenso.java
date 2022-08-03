@@ -184,6 +184,26 @@ public class EmpleadoPretenso extends Persona implements IPersona, Serializable,
 			throw new IllegalArgumentException();
 		
 	}
+
+	public EmpleadoPretenso()
+	{
+		super();
+	}
+
+	public void setNombre(String nombre)
+	{
+		this.nombre = nombre;
+	}
+
+	public void setApellido(String apellido)
+	{
+		this.apellido = apellido;
+	}
+
+	public void setEdad(int edad)
+	{
+		this.edad = edad;
+	}
     
     
 }

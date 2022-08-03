@@ -102,6 +102,12 @@ public class FormularioBusqueda implements Serializable{
 	public String getTipoTrabajo() {
 		return tipoTrabajo;
 	}
+
+
+	public FormularioBusqueda()
+	{
+		super();
+	}
 	
 	
 	

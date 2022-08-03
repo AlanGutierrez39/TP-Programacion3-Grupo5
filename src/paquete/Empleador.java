@@ -134,5 +134,40 @@ public class Empleador extends Persona implements  IPersona, Runnable
 	{
 		this.listaPesos = listaPesos;
 	}
+
+	public Empleador()
+	{
+		super();
+	}
+
+	public void setPersonaJuridica(boolean personaJuridica)
+	{
+		this.personaJuridica = personaJuridica;
+	}
+
+	public void setNomRazonS(String nomRazonS)
+	{
+		this.nomRazonS = nomRazonS;
+	}
+
+	public void setNombre(String nombre)
+	{
+		this.nombre = nombre;
+	}
+
+	public void setApellido(String apellido)
+	{
+		this.apellido = apellido;
+	}
+
+	public void setEdad(int edad)
+	{
+		this.edad = edad;
+	}
+
+	public void setRubro(String rubro)
+	{
+		this.rubro = rubro;
+	}
 	
 }
